@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Moore Manna</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #2e2e2e;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Banner Section */
+        .banner {
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .banner img {
+            width: 100%;
+            height: auto;
+            max-height: 150px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Error Section */
+        .error-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .error-content {
+            max-width: 600px;
+            background: white;
+            padding: 60px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .error-content h1 {
+            font-size: 6rem;
+            color: #ff6b35;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .error-content h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .error-content p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .home-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #ff6b35;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .home-button:hover {
+            background-color: #ff5722;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .error-content h1 {
+                font-size: 4rem;
+            }
+
+            .error-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .error-content {
+                padding: 40px 30px;
+            }
+        }
+
+        /* Large screen banner */
+        @media (min-width: 1331px) {
+            .banner img {
+                content: url('resources/largestbanner.png');
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Banner Section -->
+    <div class="banner">
+        <img src="resources/workingbanner.png" alt="Moore Manna Banner">
+    </div>
+
+    <!-- Error Section -->
+    <div class="error-container">
+        <div class="error-content">
+            <h1>404</h1>
+            <h2>Page Not Found</h2>
+            <p>Sorry, the page you're looking for doesn't exist or has been moved. Let's get you back to helping those in need.</p>
+            <a href="/" class="home-button">Return Home</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Moore Manna. All rights reserved.</p>
+        <p>Together, we can end hunger in our community.</p>
+    </footer>
+</body>
+</html>
+
