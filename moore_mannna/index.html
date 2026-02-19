@@ -26,7 +26,7 @@
 
 body {
   background: var(--ash-grey);
-  color: white; /* All tan text changed to white */
+  color: white;
   line-height: 1.7;
   scroll-behavior: smooth;
   font-size: 18px;
@@ -40,13 +40,42 @@ body {
 header {
   padding-top: 0px;
   text-align: center;
+  position: relative;
 }
 
+/* Top Navigation */
+.top-nav {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  z-index: 5;
+}
+
+.top-nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+
+.top-nav a:hover {
+  color: var(--sand);
+}
+
+/* Headline Section */
 .hero-top {
-  margin-bottom: 50px;
+  padding: 50px;
+  text-align: center;
 }
 
-/* Bold Headline */
+/* LOGO MADE BIGGER */
+.banner-logo {
+  width: 900px; 
+  height: auto;
+  display: block;
+  margin: 0 auto 30px auto;
+}
 
 header h1 {
   font-family: 'Anton', sans-serif;
@@ -93,54 +122,9 @@ header h1 {
   animation-play-state: paused;
 }
 
-
 @keyframes scrollPhotos {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-
-/* =========================
-   BUTTONS
-========================= */
-
-.btn {
-  padding: 14px 40px;
-  text-decoration: none;
-  border-radius: 40px;
-  font-weight: bold;
-  margin-top: 40px;
-  display: inline-block;
-  transition: 0.3s ease;
-  background: var(--sand);
-  color: var(--charcoal);
-}
-
-.btn:hover {
-  background: var(--light-sand);
-}
-
-/* Button in top banner */
-.banner-btn {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  z-index: 3;
-  background: var(--sand);
-  color: var(--charcoal);
-  padding: 14px 30px;
-  font-weight: bold;
-  border-radius: 40px;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.banner-btn:hover {
-  background: var(--light-sand);
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* =========================
@@ -150,14 +134,13 @@ header h1 {
 section {
   padding: 100px 10%;
   text-align: center;
-  color: white; /* all text white */
 }
 
 section h2 {
   font-family: 'Anton', sans-serif;
   font-size: 2.5rem;
   margin-bottom: 25px;
-  color: var(--highlight); /* Our Mission, Commitment, Initiatives */
+  color: var(--highlight);
   letter-spacing: 2px;
 }
 
@@ -168,7 +151,6 @@ section h2 {
 .scripture {
   margin-top: 20px;
   font-style: italic;
-  color: white; /* scripture text white */
 }
 
 /* =========================
@@ -188,7 +170,6 @@ section h2 {
   border-radius: 14px;
   border: 1px solid rgba(216,195,165,0.2);
   transition: transform 0.3s ease;
-  color: white;
 }
 
 .card h3 {
@@ -228,10 +209,19 @@ section h2 {
   margin-top: 30px;
 }
 
+.btn {
+  padding: 14px 40px;
+  text-decoration: none;
+  border-radius: 40px;
+  font-weight: bold;
+  display: inline-block;
+  margin: 10px;
+  transition: 0.3s ease;
+}
+
 .cta .btn {
   background: var(--charcoal);
   color: var(--sand);
-  margin: 10px;
 }
 
 .cta .btn:hover {
@@ -255,127 +245,20 @@ footer {
 
 @media(max-width:768px){
   header h1 { font-size: 3rem; }
+  .banner-logo { width: 280px; }
   .photo-track img { height: 180px; }
   section { padding: 70px 8%; }
   .photo-strip {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
-
   .photo-track {
-    animation: none; /* Stop auto scroll on mobile */
+    animation: none;
   }
-
   .photo-strip::-webkit-scrollbar {
-    display: none; /* Hide scrollbar (optional) */
+    display: none;
   }
 }
-
-/* =========================
-   LOGO BANNER
-========================= */
-
-.logo-banner {
-  position: relative;
-  height: 65vh;
-  min-height: 400px;
-  overflow: hidden;
-  width: 100%;
-}
-
-.banner-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-}
-
-.banner-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-}
-
-.banner-logo {
-  width: clamp(140px, 25vw, 350px);
-  height: auto;
-  display: block;
-  margin: 0 auto 25px auto;
-}
-
-/* center banner
-.banner-content {
-  position: relative;
-  z-index: 2;
-  height: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.banner-logo {
-  width: 350px;
-  transform: translate(0, 0);
-}
-*/
-
-/* left banner 
-.banner-content {
-  position: relative;
-  z-index: 2;
-  height: 100%;
-  display: flex;
-  justify-content: flex-start; 
-  align-items: flex-start;     
-  padding: 50px;              
-}
-
-.banner-logo {
-  width: 200px;
-  transform: none; 
-}
-*/
-
-/* =========================
-   TOP NAVIGATION
-========================= */
-
-.top-nav {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 5;
-  display: flex;
-  gap: 25px;
-}
-
-.top-nav a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  letter-spacing: 1px;
-  transition: 0.3s ease;
-}
-
-.top-nav a:hover {
-  color: var(--sand);
-}
-
-
-
-/* =========================
-   HEADLINE SECTION
-========================= */
-
-.hero-top {
-  padding: 80px 20px 40px 20px;
-  text-align: center;
-}
-
 </style>
 </head>
 
@@ -383,42 +266,21 @@ footer {
 
 <header>
 
-  <!-- Logo Banner -->
-  <div class="logo-banner">
-    
-    <!-- Top Right Navigation -->
-    <nav class="top-nav">
-      <a href="about.html">About Us</a>
-      <!-- <a href="prayer.html">Prayer</a> -->
-    </nav>
-
-    <!-- banner photo -->
-    <img src="moore_manna_photos/0.png" class="banner-bg">
-    <div class="banner-overlay"></div>
-    
-    <!-- mm logo 
-    <div class="banner-content">
-      <img src="logo.png" alt="Feed Empower Equip Logo" class="banner-logo">
-    </div>
-    -->
-
-    <!-- GET INVOLVED BUTTON -->
-    <a href="#get-involved" class="banner-btn">Get Involved</a>
-  </div>
+  <!-- Top Right Navigation -->
+  <nav class="top-nav">
+    <a href="about.html">About Us</a>
+  </nav>
 
   <!-- Headline Section -->
   <div class="hero-top">
-    <img src="logo.png" alt="Feed Empower Equip Logo" class="banner-logo">
-    <h1>
-      FEED.
-      EMPOWER.
-      EQUIP.
-    </h1>
+    <img src="full_logo_mm.png" alt="Moore Manna" class="banner-logo">
   </div>
 
   <!-- Horizontal Sliding Photo Strip -->
   <div class="photo-strip">
     <div class="photo-track">
+      <!-- KEEPING ALL YOUR ORIGINAL PHOTOS -->
+      <img src='moore_manna_photos/0.png'>
       <img src='moore_manna_photos/1.png'>
       <img src='moore_manna_photos/2.png'>
       <img src='moore_manna_photos/3.png'>
@@ -446,7 +308,9 @@ footer {
       <img src='moore_manna_photos/25.png'>
       <img src='moore_manna_photos/26.png'>
       <img src='moore_manna_photos/27.png'>
-      
+
+      <!-- duplicate set for seamless scroll -->
+      <img src='moore_manna_photos/0.png'>
       <img src='moore_manna_photos/1.png'>
       <img src='moore_manna_photos/2.png'>
       <img src='moore_manna_photos/3.png'>
@@ -478,6 +342,8 @@ footer {
   </div>
 
 </header>
+
+<!-- REST OF YOUR PAGE REMAINS EXACTLY THE SAME -->
 
 <section>
   <h2>Our Mission</h2>
