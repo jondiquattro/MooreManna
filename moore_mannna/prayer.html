@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prayer | Feed Empower Equip</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ash-grey: #2f2f33;
+  --smoke-grey: #1f1f23;
+  --charcoal: #141416;
+  --sand: #c29059;
+  --light-sand: #ffffff;
+  --highlight: #c29059;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--ash-grey);
+  color: white;
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+}
+
+header {
+  background: var(--charcoal);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(3rem, 6vw, 6rem);
+  letter-spacing: 4px;
+}
+
+nav {
+  margin-top: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 20px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--sand);
+}
+
+section {
+  padding: 100px 10%;
+  text-align: center;
+}
+
+section h2 {
+  font-family: 'Anton', sans-serif;
+  font-size: 2.5rem;
+  color: var(--highlight);
+  margin-bottom: 25px;
+}
+
+.alt {
+  background: var(--smoke-grey);
+}
+
+.scripture {
+  margin-top: 20px;
+  font-style: italic;
+}
+
+form {
+  margin-top: 40px;
+}
+
+input, textarea {
+  width: 100%;
+  max-width: 600px;
+  padding: 15px;
+  margin: 10px auto;
+  display: block;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  padding: 14px 40px;
+  border-radius: 40px;
+  border: none;
+  background: var(--sand);
+  color: var(--charcoal);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--light-sand);
+}
+
+footer {
+  background: var(--charcoal);
+  padding: 40px;
+  text-align: center;
+  color: var(--sand);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>PRAYER</h1>
+    <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="donate.html">Donate</a>
+    <a href="volunteer.html">Volunteer</a>
+    </nav>
+
+</header>
+
+<section>
+  <h2>Prayer Requests</h2>
+  <p>
+    We believe in the power of prayer. If you or someone you know needs prayer, 
+    please submit your request below. Our team is honored to stand with you in faith.
+  </p>
+</section>
+
+<section class="alt">
+  <h2>Submit a Request</h2>
+
+  <form>
+    <input type="text" placeholder="Your Name (Optional)">
+    <input type="email" placeholder="Your Email (Optional)">
+    <textarea rows="6" placeholder="Your Prayer Request"></textarea>
+    <button type="submit">Submit Prayer Request</button>
+  </form>
+
+  <p class="scripture">
+    “The prayer of a righteous person is powerful and effective.” – James 5:16
+  </p>
+</section>
+
+<footer>
+  © 2026 Moore Manna Nonprofit | 501(c)(3)
+</footer>
+
+</body>
+</html>

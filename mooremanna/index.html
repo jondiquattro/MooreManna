@@ -1,350 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moore Manna - Feeding the Hungry</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feed Empower Equip | Nonprofit Ministry</title>
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #2e2e2e;
-        }
+<!-- Anton font -->
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
-        /* Navigation */
-        nav {
-            background-color: #2c3e50;
-            padding: 15px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
+<style>
+:root {
+  --ash-grey: #2f2f33;
+  --smoke-grey: #1f1f23;
+  --charcoal: #141416;
+  --sand: #c29059;
+  --light-sand: #ffffff;
+  --highlight: #c29059;
+}
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
+body {
+  background: var(--ash-grey);
+  color: white;
+  line-height: 1.7;
+  scroll-behavior: smooth;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+}
 
-        nav a:hover {
-            background-color: #34495e;
-        }
+/* =========================
+   HERO SECTION
+========================= */
 
-        nav a.active {
-            background-color: #ff6b35;
-        }
+header {
+  padding-top: 0px;
+  text-align: center;
+  position: relative;
+}
 
-        /* Banner Section */
-        .banner {
-            width: 100%;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            overflow: hidden;
-            /*padding: 10px;*/
-        }
+/* Top Navigation */
+.top-nav {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  z-index: 5;
+}
 
-        .banner img {
-            width: 100%;
-            height: auto;
-            max-height: 150px;
-            object-fit: cover;
-            display: block;
-        }
+.top-nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
 
-        /* Hero Section */
-        .hero {
-            position: relative;
-            width: 100%;
-            min-height: 600px;
-            background-image: url('resources/IMG_1914.JPG');
-            background-size: cover;
-            background-position: center top;
-            background-repeat: no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
-        }
+.top-nav a:hover {
+  color: var(--sand);
+}
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-        }
+/* Headline Section */
+.hero-top {
+  padding: 50px;
+  text-align: center;
+}
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            color: white;
-            padding: 20px;
-            max-width: 1200px;
-            width: 100%;
-        }
+/* LOGO MADE BIGGER */
+.banner-logo {
+  width: 900px; 
+  height: auto;
+  display: block;
+  margin: 0 auto 30px auto;
+}
 
-        .hero-columns {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin-top: 20px;
-        }
+header h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(3.5rem, 8vw, 8rem);
+  letter-spacing: 4px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: white;
+}
 
-        .hero-column {
-            text-align: center;
-        }
+/* =========================
+   PHOTO STRIP
+========================= */
 
-        .hero-column h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-            line-height: 1.2;
-            color: white;
-            margin-bottom: 15px;
-        }
+.photo-strip {
+  width: 100%;
+  overflow: hidden;
+  background: var(--smoke-grey);
+  padding: 40px 0;
+  position: relative;
+}
 
-        .hero-column p {
-            font-size: 1.1rem;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-            line-height: 1.4;
-            color: white;
-        }
+.photo-track {
+  display: flex;
+  gap: 10px;
+  width: max-content;
+  animation: scrollPhotos 90s linear infinite;
+}
 
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-            font-weight: 700;
-        }
+.photo-track img {
+  height: 260px;
+  width: auto;
+  border-radius: 14px;
+  object-fit: cover;
+  flex-shrink: 0;
+  transition: transform 0.4s ease;
+}
 
-        .hero-content p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-            line-height: 1.8;
-        }
+.photo-track img:hover {
+  transform: scale(1.05);
+}
 
-        .cta-button {
-            display: inline-block;
-            padding: 15px 40px;
-            background-color: #ff6b35;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-        }
+.photo-strip:hover .photo-track {
+  animation-play-state: paused;
+}
 
-        .cta-button:hover {
-            background-color: #ff5722;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(0,0,0,0.4);
-        }
+@keyframes scrollPhotos {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 
-        /* Content Section */
-        .content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
+/* =========================
+   SECTIONS
+========================= */
 
-        .content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #2c3e50;
-            text-align: center;
-        }
+section {
+  padding: 100px 10%;
+  text-align: center;
+}
 
-        .content p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            text-align: center;
-            color: #555;
-        }
+section h2 {
+  font-family: 'Anton', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  color: var(--highlight);
+  letter-spacing: 2px;
+}
 
-        /* Announcement Section */
-        .announcement {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-            text-align: center;
-        }
+.alt-section {
+  background: var(--smoke-grey);
+}
 
-        .announcement h2 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            color: #2c3e50;
-        }
+.scripture {
+  margin-top: 20px;
+  font-style: italic;
+}
 
-        .announcement-image {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+/* =========================
+   INITIATIVES
+========================= */
 
-        .announcement-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
+.initiatives {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
 
-        .mission-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
+.card {
+  background: var(--smoke-grey);
+  padding: 40px;
+  border-radius: 14px;
+  border: 1px solid rgba(216,195,165,0.2);
+  transition: transform 0.3s ease;
+}
 
-        .mission-card {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            text-align: center;
-        }
+.card h3 {
+  color: var(--highlight);
+}
 
-        .mission-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: #ff6b35;
-        }
+.card:hover {
+  transform: translateY(-5px);
+}
 
-        .mission-card p {
-            color: #666;
-        }
+/* =========================
+   EVENTS
+========================= */
 
-        /* Footer */
-        footer {
-            background-color: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 50px;
-        }
+.events iframe {
+  width: 100%;
+  height: 600px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 30px;
+}
 
-        footer p {
-            margin-bottom: 10px;
-        }
+/* =========================
+   CTA
+========================= */
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-columns {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
+.cta {
+  background: var(--sand);
+  color: var(--charcoal);
+}
 
-            .hero-column h2 {
-                font-size: 2rem;
-            }
+.cta h2 {
+  color: var(--charcoal);
+}
 
-            .hero-column p {
-                font-size: 1rem;
-            }
+.button-group {
+  margin-top: 30px;
+}
 
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
+.btn {
+  padding: 14px 40px;
+  text-decoration: none;
+  border-radius: 40px;
+  font-weight: bold;
+  display: inline-block;
+  margin: 10px;
+  transition: 0.3s ease;
+}
 
-            .hero-content p {
-                font-size: 1.2rem;
-            }
+.cta .btn {
+  background: var(--charcoal);
+  color: var(--sand);
+}
 
-            .hero {
-                min-height: 400px;
-            }
+.cta .btn:hover {
+  background: black;
+}
 
-            .content h2 {
-                font-size: 2rem;
-            }
+/* =========================
+   FOOTER
+========================= */
 
-            .announcement h2 {
-                font-size: 2rem;
-            }
+footer {
+  background: var(--charcoal);
+  padding: 40px;
+  text-align: center;
+  color: var(--sand);
+}
 
-            .banner img {
-                max-height: 100px;
-            }
-        }
+/* =========================
+   RESPONSIVE
+========================= */
 
-        /* Large screen banner */
-        @media (min-width: 1331px) {
-            .banner img {
-                content: url('resources/largestbanner.png');
-            }
-        }
-    </style>
+@media(max-width:768px){
+  header h1 { font-size: 3rem; }
+  .banner-logo { width: 280px; }
+  .photo-track img { height: 180px; }
+  section { padding: 70px 8%; }
+  .photo-strip {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .photo-track {
+    animation: none;
+  }
+  .photo-strip::-webkit-scrollbar {
+    display: none;
+  }
+}
+</style>
 </head>
+
 <body>
-    <!-- Banner Section -->
-    <div class="banner">
-        <img src="resources/workingbanner.png" alt="Moore Manna Banner">
+
+<header>
+
+  <!-- Top Right Navigation -->
+  <nav class="top-nav">
+    <a href="about.html">About Us</a>
+  </nav>
+
+  <!-- Headline Section -->
+  <div class="hero-top">
+    <img src="full_logo_mm.png" alt="Moore Manna" class="banner-logo">
+  </div>
+
+  <!-- Horizontal Sliding Photo Strip -->
+  <div class="photo-strip">
+    <div class="photo-track">
+      <!-- KEEPING ALL YOUR ORIGINAL PHOTOS -->
+      <img src='moore_manna_photos/0.png'>
+      <img src='moore_manna_photos/1.png'>
+      <img src='moore_manna_photos/2.png'>
+      <img src='moore_manna_photos/3.png'>
+      <img src='moore_manna_photos/4.png'>
+      <img src='moore_manna_photos/5.png'>
+      <img src='moore_manna_photos/6.png'>
+      <img src='moore_manna_photos/7.png'>
+      <img src='moore_manna_photos/8.png'>
+      <img src='moore_manna_photos/9.png'>
+      <img src='moore_manna_photos/10.png'>
+      <img src='moore_manna_photos/11.png'>
+      <img src='moore_manna_photos/12.png'>
+      <img src='moore_manna_photos/13.png'>
+      <img src='moore_manna_photos/14.png'>
+      <img src='moore_manna_photos/15.png'>
+      <img src='moore_manna_photos/16.png'>
+      <img src='moore_manna_photos/17.png'>
+      <img src='moore_manna_photos/18.png'>
+      <img src='moore_manna_photos/19.png'>
+      <img src='moore_manna_photos/20.png'>
+      <img src='moore_manna_photos/21.png'>
+      <img src='moore_manna_photos/22.png'>
+      <img src='moore_manna_photos/23.png'>
+      <img src='moore_manna_photos/24.png'>
+      <img src='moore_manna_photos/25.png'>
+      <img src='moore_manna_photos/26.png'>
+      <img src='moore_manna_photos/27.png'>
+
+      <!-- duplicate set for seamless scroll -->
+      <img src='moore_manna_photos/0.png'>
+      <img src='moore_manna_photos/1.png'>
+      <img src='moore_manna_photos/2.png'>
+      <img src='moore_manna_photos/3.png'>
+      <img src='moore_manna_photos/4.png'>
+      <img src='moore_manna_photos/5.png'>
+      <img src='moore_manna_photos/6.png'>
+      <img src='moore_manna_photos/7.png'>
+      <img src='moore_manna_photos/8.png'>
+      <img src='moore_manna_photos/9.png'>
+      <img src='moore_manna_photos/10.png'>
+      <img src='moore_manna_photos/11.png'>
+      <img src='moore_manna_photos/12.png'>
+      <img src='moore_manna_photos/13.png'>
+      <img src='moore_manna_photos/14.png'>
+      <img src='moore_manna_photos/15.png'>
+      <img src='moore_manna_photos/16.png'>
+      <img src='moore_manna_photos/17.png'>
+      <img src='moore_manna_photos/18.png'>
+      <img src='moore_manna_photos/19.png'>
+      <img src='moore_manna_photos/20.png'>
+      <img src='moore_manna_photos/21.png'>
+      <img src='moore_manna_photos/22.png'>
+      <img src='moore_manna_photos/23.png'>
+      <img src='moore_manna_photos/24.png'>
+      <img src='moore_manna_photos/25.png'>
+      <img src='moore_manna_photos/26.png'>
+      <img src='moore_manna_photos/27.png'>
     </div>
+  </div>
 
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="mission.html">Our Mission</a></li>
-        </ul>
-    </nav>
+</header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-columns">
-                <div class="hero-column">
-                    <h2>Feeding the hungry.</h2>
-                    <p>Our teams deliver hot meals to those in need each week across Moore County.</p>
-                </div>
-                <div class="hero-column">
-                    <h2>Equipping the broken.</h2>
-                    <p>Our devoted Missions Team uses Bibical principals as the foundation to help others rebuild their life one day at a time.</p>
-                </div>
-                <div class="hero-column">
-                    <h2>Empowering our cities.</h2>
-                    <p>City renewal requires unity and our teams want to come along side others to resource and teach them how to be a part of the solution.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- REST OF YOUR PAGE REMAINS EXACTLY THE SAME -->
 
-    <!-- Announcement Section -->
-    <section class="announcement">
-        <h2>Announcements</h2>
-        <div class="announcement-image">
-            <img src="resources/IMG_0733.jpg" alt="Moore Manna Announcement">
-        </div>
-    </section>
+<section>
+  <h2>Our Mission</h2>
+  <p>
+    Our Mission is to feed, empower and equip those in need across the county with biblical principles and support.
+    In addition to delivering a hot meal each week, we aim to bridge the gap between resources in the county and those
+    in need of said resources. We work alongside multiple churches and nonprofits to feed, clothe and love those in need.
+  </p>
+  <p class="scripture">
+    “Behold, how good and how pleasant it is for brethren to dwell together in unity!” – Psalm 133:1
+  </p>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Moore Manna. All rights reserved.</p>
-        <p>Together, we can end hunger in our community.</p>
-    </footer>
+<section class="alt-section">
+  <h2>Our Commitment</h2>
+  <p>
+    Our ministry is committed to alleviating hunger both in body and spirit in the county. Join us in our mission
+    through volunteering, donations, or spreading awareness.
+  </p>
+  <p class="scripture">
+    “And let us consider one another to provoke unto love and to good works...” – Hebrews 10:24-25
+  </p>
+</section>
+
+<section>
+  <h2>Our Initiatives</h2>
+  <div class="initiatives">
+    <div class="card">
+      <h3>Meal Programs</h3>
+      <p>Providing hot meals and food supplies to homeless individuals in need.</p>
+    </div>
+    <div class="card">
+      <h3>Resource Distribution</h3>
+      <p>Distributing hygiene kits and clothing to restore dignity and comfort.</p>
+    </div>
+    <div class="card">
+      <h3>Community Outreach</h3>
+      <p>Raising awareness and uniting efforts toward eradicating hunger.</p>
+    </div>
+  </div>
+  <p class="scripture">
+    “I was hungry and you gave me something to eat...” – Matthew 25:36
+  </p>
+</section>
+
+<section class="events alt-section">
+  <h2>Upcoming Events</h2>
+  <iframe src="https://calendar.google.com/calendar/embed?src=YOUR_GOOGLE_CALENDAR_ID&ctz=America/New_York"></iframe>
+</section>
+
+<section class="cta" id="get-involved">
+  <h2>Get Involved</h2>
+  <p>Your support makes the mission possible.</p>
+
+  <div class="button-group">
+    <a href="volunteer.html" class="btn">Volunteer</a>
+    <a href="donate.html" class="btn">Donate</a>
+    <a href="contact.html" class="btn">Contact Us</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Moore Manna Nonprofit | 501(c)(3)</p>
+</footer>
+
 </body>
 </html>

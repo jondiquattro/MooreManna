@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volunteer | Feed Empower Equip</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ash-grey: #2f2f33;
+  --smoke-grey: #1f1f23;
+  --charcoal: #141416;
+  --sand: #c29059;
+  --light-sand: #ffffff;
+  --highlight: #c29059;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--ash-grey);
+  color: white;
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+}
+
+header {
+  background: var(--charcoal);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(3rem, 6vw, 6rem);
+  letter-spacing: 4px;
+}
+
+nav {
+  margin-top: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 20px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--sand);
+}
+
+section {
+  padding: 100px 10%;
+  text-align: center;
+}
+
+section h2 {
+  font-family: 'Anton', sans-serif;
+  font-size: 2.5rem;
+  color: var(--highlight);
+  margin-bottom: 25px;
+}
+
+.alt {
+  background: var(--smoke-grey);
+}
+
+.scripture {
+  margin-top: 20px;
+  font-style: italic;
+}
+
+/* FORM STYLING */
+
+form {
+  margin-top: 40px;
+}
+
+input, textarea, select {
+  width: 100%;
+  max-width: 600px;
+  padding: 15px;
+  margin: 12px auto;
+  display: block;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+}
+
+button {
+  padding: 14px 40px;
+  border-radius: 40px;
+  border: none;
+  background: var(--sand);
+  color: var(--charcoal);
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background: var(--light-sand);
+}
+
+footer {
+  background: var(--charcoal);
+  padding: 40px;
+  text-align: center;
+  color: var(--sand);
+}
+
+@media(max-width:768px){
+  section { padding: 70px 8%; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>VOLUNTEER</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="donate.html">Donate</a>
+    <a href="prayer.html">Prayer</a>
+
+  </nav>
+</header>
+
+<section>
+  <h2>Serve With Us</h2>
+  <p>
+    We believe hands and feet matter. Whether you can serve weekly or occasionally,
+    your time and heart can make a real difference in our community.
+  </p>
+  <p class="scripture">
+    “Each of you should use whatever gift you have received to serve others.” – 1 Peter 4:10
+  </p>
+</section>
+
+<section class="alt">
+  <h2>Volunteer Sign-Up</h2>
+
+  <!-- REPLACE YOUR_FORM_ID WITH YOUR FORMSPREE ID -->
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+    <input type="text" name="name" placeholder="Full Name" required>
+
+    <input type="email" name="email" placeholder="Email Address" required>
+
+    <input type="tel" name="phone" placeholder="Phone Number">
+
+    <select name="area_of_interest" required>
+      <option value="">Area of Interest</option>
+      <option value="Meal Preparation">Meal Preparation</option>
+      <option value="Meal Distribution">Meal Distribution</option>
+      <option value="Clothing Distribution">Clothing Distribution</option>
+      <option value="Prayer Team">Prayer Team</option>
+      <option value="Community Outreach">Community Outreach</option>
+    </select>
+
+    <textarea name="availability" rows="4" placeholder="Availability (Days/Times)"></textarea>
+
+    <textarea name="message" rows="5" placeholder="Anything else you'd like us to know?"></textarea>
+
+    <button type="submit">Submit Volunteer Form</button>
+
+  </form>
+</section>
+
+<footer>
+  © 2026 Moore Manna Nonprofit | 501(c)(3)
+</footer>
+
+</body>
+</html>

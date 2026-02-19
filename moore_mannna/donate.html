@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate | Feed Empower Equip</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ash-grey: #2f2f33;
+  --smoke-grey: #1f1f23;
+  --charcoal: #141416;
+  --sand: #c29059;
+  --light-sand: #ffffff;
+  --highlight: #c29059;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--ash-grey);
+  color: white;
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+}
+
+header {
+  background: var(--charcoal);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(3rem, 6vw, 6rem);
+  letter-spacing: 4px;
+}
+
+nav {
+  margin-top: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 20px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--sand);
+}
+
+section {
+  padding: 100px 10%;
+  text-align: center;
+}
+
+section h2 {
+  font-family: 'Anton', sans-serif;
+  font-size: 2.5rem;
+  color: var(--highlight);
+  margin-bottom: 25px;
+}
+
+.alt {
+  background: var(--smoke-grey);
+}
+
+.donation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.card {
+  background: var(--smoke-grey);
+  padding: 40px;
+  border-radius: 14px;
+  border: 1px solid rgba(216,195,165,0.2);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  color: var(--highlight);
+  margin-bottom: 15px;
+}
+
+.btn {
+  padding: 16px 50px;
+  text-decoration: none;
+  border-radius: 40px;
+  font-weight: bold;
+  display: inline-block;
+  transition: 0.3s ease;
+  background: var(--sand);
+  color: var(--charcoal);
+  margin-top: 30px;
+}
+
+.btn:hover {
+  background: var(--light-sand);
+}
+
+.scripture {
+  margin-top: 20px;
+  font-style: italic;
+}
+
+footer {
+  background: var(--charcoal);
+  padding: 40px;
+  text-align: center;
+  color: var(--sand);
+}
+
+@media(max-width:768px){
+  section { padding: 70px 8%; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>DONATE</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="prayer.html">Prayer</a>
+    <a href="volunteer.html">Volunteer</a>
+  </nav>
+</header>
+
+<section>
+  <h2>Support the Mission</h2>
+  <p>
+    Your generosity allows us to feed, empower, and equip those in need across our county.
+    Every donation directly impacts lives in our community.
+  </p>
+  <p class="scripture">
+    “It is more blessed to give than to receive.” – Acts 20:35
+  </p>
+</section>
+
+<section class="alt">
+  <h2>Ways You Can Give</h2>
+
+  <div class="donation-grid">
+
+    <div class="card">
+      <h3>Financial Contributions</h3>
+      <p>
+        Monetary donations help us purchase food, hygiene supplies, and
+        essential resources for weekly outreach efforts.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Food Donations</h3>
+      <p>
+        Non-perishable food items, bulk ingredients, and meal supplies
+        help us continue providing hot meals each week.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Clothing & Hygiene Items</h3>
+      <p>
+        New or gently used clothing, blankets, socks, and hygiene kits
+        restore dignity and comfort to those we serve.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Corporate & Church Sponsorships</h3>
+      <p>
+        Partner with us as a business or ministry to sponsor outreach
+        events, meal programs, or supply drives.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Give Financially</h2>
+  <p>
+    Secure online giving makes it easy to support the mission.
+    Click below to make a one-time or recurring donation.
+  </p>
+
+  <!-- REPLACE # WITH YOUR PAYMENT LINK -->
+  <a href="#" class="btn">Donate Now</a>
+</section>
+
+<footer>
+  © 2026 Moore Manna Nonprofit | 501(c)(3)
+</footer>
+
+</body>
+</html>
