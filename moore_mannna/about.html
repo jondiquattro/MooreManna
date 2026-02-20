@@ -8,8 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
 <style>
-/* === COPY YOUR SAME ROOT + GLOBAL STYLES === */
-
 :root {
   --ash-grey: #2f2f33;
   --smoke-grey: #1f1f23;
@@ -26,6 +24,8 @@ body {
   color: white;
   font-family: Arial, sans-serif;
   line-height: 1.7;
+  font-size: 22px;
+  font-family: Arial, sans-serif;
 }
 
 header {
@@ -82,6 +82,12 @@ footer {
   text-align: center;
   color: var(--sand);
 }
+
+.about-img {
+  width: 600px;        /* desktop size */
+  max-width: 100%;     /* shrink for mobile */
+  height: auto;        /* keep proportions */
+}
 </style>
 </head>
 
@@ -100,7 +106,7 @@ footer {
 </header>
 
 <section>
-  <img src="moore_manna_photos/0.png" style="width: 600px; height: auto;">
+  <img src="moore_manna_photos/0.png" class="about-img">
   </br></br>
   <p> We began in September of 2025 with a burden to feed God’s people. </p>
   <p>Seemingly a simple task feeding 12 people quickly grew to feeding over 110 people each week! </p>
