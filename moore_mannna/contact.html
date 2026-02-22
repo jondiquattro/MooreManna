@@ -5,16 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | Moore Manna</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<!-- Updated Google Fonts Link for Merriweather -->
+<link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --ash-grey: #2f2f33;
-  --smoke-grey: #1f1f23;
+  --ash-grey: #173F5F;
+  --smoke-grey: #f2f1f1;
   --charcoal: #141416;
-  --sand: #c29059;
+  --sand: #fbbc58;
   --light-sand: #ffffff;
-  --highlight: #c29059;
+  --highlight: #fbbc58;
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -22,32 +23,38 @@
 body {
   background: var(--ash-grey);
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: 'Merriweather', serif; /* Updated to Merriweather */
   line-height: 1.7;
   font-size: 22px;
-  font-family: Arial, sans-serif;
 }
 
+/* HEADER + NAV */
 header {
   background: var(--charcoal);
-  padding: 40px 20px;
-  text-align: center;
+  padding: 20px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
 }
 
-header h1 {
+/* LOGO TEXT (optional – can replace with image later) */
+.logo {
   font-family: 'Anton', sans-serif;
-  font-size: clamp(3rem, 6vw, 6rem);
-  letter-spacing: 4px;
+  font-size: 28px;
+  letter-spacing: 2px;
 }
 
+/* NAV LINKS */
 nav {
-  margin-top: 20px;
+  display: flex;
+  gap: 30px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  margin: 0 20px;
   font-weight: bold;
 }
 
@@ -55,30 +62,39 @@ nav a:hover {
   color: var(--sand);
 }
 
+/* HAMBURGER BUTTON */
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+/* SECTIONS */
 section {
   padding: 100px 10%;
   text-align: center;
 }
 
 section h2 {
-  font-family: 'Anton', sans-serif;
+  font-family: 'Merriweather', serif; /* Updated to Merriweather */
   font-size: 2.5rem;
   color: var(--highlight);
   margin-bottom: 25px;
 }
 
+/* Contact Info Section - white background, black text */
 .alt {
-  background: var(--smoke-grey);
+  background: var(--light-sand); /* white background */
+  color: black; /* default text black */
 }
 
-/* Contact Info */
-
-.contact-info p {
+.alt .contact-info p {
   margin: 10px 0;
+  color: black; /* ensure email and phone text is black */
 }
 
 /* FORM */
-
 form {
   margin-top: 40px;
 }
@@ -121,7 +137,38 @@ footer {
   color: var(--sand);
 }
 
-@media(max-width:768px){
+/* MOBILE RESPONSIVE */
+@media(max-width:900px){
+  header {
+    padding: 20px;
+  }
+
+  nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: var(--charcoal);
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    display: none;
+    padding: 20px 0;
+    z-index: 9999;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    padding: 15px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+    z-index: 10000; /* always above photos too */
+  }
+
   section { padding: 70px 8%; }
 }
 </style>
@@ -130,14 +177,15 @@ footer {
 <body>
 
 <header>
-  <h1>CONTACT</h1>
-  <nav>
+  <div class="logo">MOORE MANNA</div>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <nav id="nav-menu">
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
     <a href="donate.html">Donate</a>
     <a href="prayer.html">Prayer</a>
-    <a href="volunteer.html">Volunteer</a>
-    
+    <a href="volunteer.html">Volunteer</a>  
   </nav>
 </header>
 
@@ -153,7 +201,7 @@ footer {
 </section>
 
 <section class="alt">
-  <h2>Contact Information</h2>
+  <h2>Contact information</h2>
   <div class="contact-info">
     <p>Email: info@mooremanna.org</p>
     <p>Phone: (000) 000-0000</p>
@@ -164,6 +212,13 @@ footer {
 <footer>
   © 2026 Moore Manna Nonprofit | 501(c)(3)
 </footer>
+
+<script>
+// Mobile menu toggle
+function toggleMenu() {
+  document.getElementById("nav-menu").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
