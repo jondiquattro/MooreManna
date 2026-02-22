@@ -5,16 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Donate | Moore Manna</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<!-- Updated Google Fonts Link for Merriweather -->
+<link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --ash-grey: #2f2f33;
-  --smoke-grey: #1f1f23;
+  --ash-grey: #173F5F;
+  --smoke-grey: #f2f1f1;
   --charcoal: #141416;
-  --sand: #c29059;
+  --sand: #fbbc58;
   --light-sand: #ffffff;
-  --highlight: #c29059;
+  --highlight: #fbbc58;
+  --blue-background: #173F5F; /* blue background */
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -22,32 +24,36 @@
 body {
   background: var(--ash-grey);
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: 'Merriweather', serif; /* Updated to Merriweather */
   line-height: 1.7;
   font-size: 22px;
-  font-family: Arial, sans-serif;
 }
 
+/* HEADER + NAV */
 header {
   background: var(--charcoal);
-  padding: 40px 20px;
-  text-align: center;
+  padding: 20px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
 }
 
-header h1 {
+.logo {
   font-family: 'Anton', sans-serif;
-  font-size: clamp(3rem, 6vw, 6rem);
-  letter-spacing: 4px;
+  font-size: 28px;
+  letter-spacing: 2px;
 }
 
 nav {
-  margin-top: 20px;
+  display: flex;
+  gap: 30px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  margin: 0 20px;
   font-weight: bold;
 }
 
@@ -55,13 +61,58 @@ nav a:hover {
   color: var(--sand);
 }
 
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+/* DONATE TOP BLOCK */
+.donate-top {
+  display: flex;
+  justify-content: center;      /* center the logo+text horizontally */
+  align-items: center;          /* vertically center logo with text */
+  gap: 40px;
+  padding: 80px 10%;
+  text-align: left;
+  background: var(--blue-background);  /* blue background */
+  color: white;
+  flex-wrap: wrap;              /* wrap on smaller screens */
+}
+
+.donate-top img {
+  max-width: 200px;             /* bigger logo */
+  height: auto;
+}
+
+.donate-top .text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.donate-top .text-content p {
+  color: white;
+  font-size: 2rem; /* Adjusted to match volunteer.html */
+  font-weight: bold;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+/* Highlight "serve others" in blue */
+.highlight-blue {
+  color: var(--highlight);
+}
+
+/* SECTIONS */
 section {
   padding: 100px 10%;
   text-align: center;
 }
 
 section h2 {
-  font-family: 'Anton', sans-serif;
+  font-family: 'Merriweather', serif; /* Updated to Merriweather */
   font-size: 2.5rem;
   color: var(--highlight);
   margin-bottom: 25px;
@@ -79,15 +130,17 @@ section h2 {
 }
 
 .card {
-  background: var(--smoke-grey);
+  background: var(--ash-grey); /* lighter grey */
   padding: 40px;
   border-radius: 14px;
-  border: 1px solid rgba(216,195,165,0.2);
-  transition: transform 0.3s ease;
+  border: 1px solid rgba(216,195,165,0.25);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.45);
 }
 
 .card h3 {
@@ -123,8 +176,45 @@ footer {
   color: var(--sand);
 }
 
-@media(max-width:768px){
-  section { padding: 70px 8%; }
+/* MOBILE RESPONSIVE */
+@media(max-width:900px){
+  header {
+    padding: 20px;
+  }
+
+  nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: var(--charcoal);
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    display: none;
+    padding: 20px 0;
+    z-index: 9999;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    padding: 15px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+    z-index: 10000;
+  }
+
+  section { 
+    padding: 70px 8%; 
+  }
+
+  .donate-top .text-content p {
+    font-size: 1.8rem; /* Adjust for mobile, same as in volunteer.html */
+  }
 }
 </style>
 </head>
@@ -132,25 +222,27 @@ footer {
 <body>
 
 <header>
-  <h1>DONATE</h1>
-  <nav>
+  <div class="logo">MOORE MANNA</div>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <nav id="nav-menu">
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
     <a href="contact.html">Contact</a>
+    <a href="donate.html">Donate</a>
     <a href="prayer.html">Prayer</a>
-    <a href="volunteer.html">Volunteer</a>
+    <a href="volunteer.html">Volunteer</a>  
   </nav>
 </header>
 
-<section>
-  <h2>Support the Mission</h2>
-  <p>
-    Your generosity allows us to feed, empower, and equip those in need across our county.
-    Every donation directly impacts lives in our community.
-  </p>
-  <p class="scripture">
-    “It is more blessed to give than to receive.” - Acts 20:35
-  </p>
+<!-- DONATE TOP BLOCK -->
+<section class="donate-top">
+  <!--<img src="moore_manna_photos/yellow_logo.png" alt="Moore Manna Logo">-->
+  <div class="text-content">
+    <p>"... It is more</p>
+    <p>blessed to <span class="highlight-blue">give</span></p>
+    <p>than to receive."</p>
+    <p><em>Acts 20:35</em></p>
+  </div>
 </section>
 
 <section class="alt">
@@ -200,13 +292,19 @@ footer {
     Click below to make a one-time or recurring donation.
   </p>
 
-  <!-- REPLACE # WITH YOUR PAYMENT LINK -->
   <a href="#" class="btn">Donate Now</a>
 </section>
 
 <footer>
   © 2026 Moore Manna Nonprofit | 501(c)(3)
 </footer>
+
+<script>
+// Mobile menu toggle
+function toggleMenu() {
+  document.getElementById("nav-menu").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>

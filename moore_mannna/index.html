@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Moore Manna</title>
 
-<!-- Anton font -->
-<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<!-- Updated Google Fonts Link for Merriweather -->
+<link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --ash-grey: #2f2f33;
-  --smoke-grey: #1f1f23;
+  --ash-grey: #173F5F;
+  --smoke-grey: #f2f1f1;
   --charcoal: #141416;
-  --sand: #c29059;
+  --sand: #fbbc58;
   --light-sand: #ffffff;
-  --highlight: #c29059;
+  --highlight: #fbbc58;
 }
 
 * {
@@ -30,7 +30,7 @@ body {
   line-height: 1.7;
   scroll-behavior: smooth;
   font-size: 22px;
-  font-family: Arial, sans-serif;
+  font-family: 'Merriweather', serif; /* Updated to Merriweather */
 }
 
 /* =========================
@@ -78,7 +78,7 @@ header {
 }
 
 header h1 {
-  font-family: 'Anton', sans-serif;
+  font-family: 'Merriweather', serif; /* Updated to Merriweather */
   font-size: clamp(3.5rem, 8vw, 8rem);
   letter-spacing: 4px;
   line-height: 1;
@@ -137,7 +137,7 @@ section {
 }
 
 section h2 {
-  font-family: 'Anton', sans-serif;
+  font-family: 'Merriweather', serif; /* Updated to Merriweather */
   font-size: 2.5rem;
   margin-bottom: 25px;
   color: var(--highlight);
@@ -165,11 +165,12 @@ section h2 {
 }
 
 .card {
-  background: var(--smoke-grey);
+  background: var(--ash-grey); /* LIGHTER GREY */
   padding: 40px;
   border-radius: 14px;
-  border: 1px solid rgba(216,195,165,0.2);
-  transition: transform 0.3s ease;
+  border: 1px solid rgba(216,195,165,0.25);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.35); /* subtle depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card h3 {
@@ -177,7 +178,8 @@ section h2 {
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.45);
 }
 
 /* =========================
@@ -262,6 +264,7 @@ footer {
 </style>
 </head>
 
+
 <body>
 
 <header>
@@ -273,7 +276,7 @@ footer {
 
   <!-- Headline Section -->
   <div class="hero-top">
-    <img src="/moore_manna_photos/full_logo_mm.png" alt="Moore Manna" class="banner-logo">
+    <img src="full_logo_mm.png" alt="Moore Manna" class="banner-logo">
   </div>
 
   <!-- Horizontal Sliding Photo Strip -->
@@ -307,6 +310,10 @@ footer {
       <img src='moore_manna_photos/25.png'>
       <img src='moore_manna_photos/26.png'>
       <img src='moore_manna_photos/27.png'>
+      <img src='moore_manna_photos/28.png'>
+      <img src='moore_manna_photos/29.png'>
+      <img src='moore_manna_photos/30.png'>
+      <img src='moore_manna_photos/31.png'>
       <img src='moore_manna_photos/0.png'>
       <!-- duplicate set for seamless scroll -->
       <img src='moore_manna_photos/1.png'>
@@ -336,6 +343,10 @@ footer {
       <img src='moore_manna_photos/25.png'>
       <img src='moore_manna_photos/26.png'>
       <img src='moore_manna_photos/27.png'>
+      <img src='moore_manna_photos/28.png'>
+      <img src='moore_manna_photos/29.png'>
+      <img src='moore_manna_photos/30.png'>
+      <img src='moore_manna_photos/31.png'>
       <img src='moore_manna_photos/0.png'>
     </div>
   </div>
@@ -356,17 +367,6 @@ footer {
 </section>
 
 <section class="alt-section">
-  <h2>Our Commitment</h2>
-  <p>
-    In everything we do, we seek to bring glory to Jesus Christ. We serve with honesty, transparency, and the strength that God provides. We believe that no person is beyond the reach of God’s grace. Our teams act as a "beacon of hope" in the darkness, trusting that God can rebuild even the most broken lives.
-  </p>
-  <p class="scripture">
-    “Whoever speaks, as one who speaks oracles of God; whoever serves, as one who serves by the strength that God supplies—in order that in everything God may be glorified through Jesus Christ. To him belong glory and dominion forever and ever. Amen.” - 1 Peter 4:11
-  </p>
-</section>
-
-<section>
-  <h2>Our Initiatives</h2>
   <div class="initiatives">
     <div class="card">
       <h3>FEED</h3>
@@ -381,12 +381,9 @@ footer {
       <p>We equip our neighbors with the practical tools, skills, and spiritual foundation necessary to sustain a transformed life.</p>
     </div>
   </div>
-  <p class="scripture">
-    “I was hungry and you gave me something to eat...” - Matthew 25:36
-  </p>
 </section>
 
-<section class="events alt-section">
+<section class="events">
   <h2>Upcoming Events</h2>
   <iframe src="https://calendar.google.com/calendar/embed?src=c_d40182f8fc9a12beb3d2a8a7f8e25c150146a1823e97d8b07885b14708b26c3b@group.calendar.google.com&ctz=America/New_York"></iframe>
 </section>
@@ -396,9 +393,10 @@ footer {
   <p>Your support makes the mission possible.</p>
 
   <div class="button-group">
-    <a href="volunteer.html" class="btn">Volunteer</a>
-    <a href="donate.html" class="btn">Donate</a>
     <a href="contact.html" class="btn">Contact Us</a>
+    <a href="donate.html" class="btn">Donate</a>
+    <a href="prayer.html" class="btn">Prayer</a>
+    <a href="volunteer.html" class="btn">Volunteer</a>
   </div>
 </section>
 

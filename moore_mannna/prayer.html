@@ -5,16 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Prayer | Moore Manna</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<!-- Updated Google Fonts Link for Merriweather -->
+<link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --ash-grey: #2f2f33;
-  --smoke-grey: #1f1f23;
+  --ash-grey: #173F5F;
+  --smoke-grey: #f2f1f1;
   --charcoal: #141416;
-  --sand: #c29059;
+  --sand: #fbbc58;
   --light-sand: #ffffff;
-  --highlight: #c29059;
+  --highlight: #fbbc58;
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -22,32 +23,36 @@
 body {
   background: var(--ash-grey);
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: 'Merriweather', serif; /* Updated to Merriweather */
   line-height: 1.7;
   font-size: 22px;
-  font-family: Arial, sans-serif;
 }
 
+/* HEADER + NAV */
 header {
   background: var(--charcoal);
-  padding: 40px 20px;
-  text-align: center;
+  padding: 20px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
 }
 
-header h1 {
+.logo {
   font-family: 'Anton', sans-serif;
-  font-size: clamp(3rem, 6vw, 6rem);
-  letter-spacing: 4px;
+  font-size: 28px;
+  letter-spacing: 2px;
 }
 
 nav {
-  margin-top: 20px;
+  display: flex;
+  gap: 30px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  margin: 0 20px;
   font-weight: bold;
 }
 
@@ -55,13 +60,42 @@ nav a:hover {
   color: var(--sand);
 }
 
-section {
-  padding: 100px 10%;
-  text-align: center;
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 10000;
 }
 
-section h2 {
-  font-family: 'Anton', sans-serif;
+/* SECTION BLOCKS */
+.section-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 80px 10%;
+  flex-wrap: wrap;
+}
+
+.section-block img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 14px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+  object-fit: cover;
+}
+
+.section-block .section-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.section-text p {
+  margin-bottom: 20px;
+}
+
+.section-text h2 {
+  font-family: 'Merriweather', serif; /* Updated to Merriweather */
   font-size: 2.5rem;
   color: var(--highlight);
   margin-bottom: 25px;
@@ -69,46 +103,67 @@ section h2 {
 
 .alt {
   background: var(--smoke-grey);
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
 }
 
-.scripture {
-  margin-top: 20px;
-  font-style: italic;
+/* Make only email text black */
+.alt .section-text p {
+  color: black; /* email will now appear black */
 }
 
-form {
-  margin-top: 40px;
-}
-
-input, textarea {
-  width: 100%;
-  max-width: 600px;
-  padding: 15px;
-  margin: 10px auto;
-  display: block;
-  border-radius: 8px;
-  border: none;
-}
-
-button {
-  padding: 14px 40px;
-  border-radius: 40px;
-  border: none;
-  background: var(--sand);
-  color: var(--charcoal);
-  font-weight: bold;
-  cursor: pointer;
-}
-
-button:hover {
-  background: var(--light-sand);
-}
-
+/* FOOTER */
 footer {
   background: var(--charcoal);
   padding: 40px;
   text-align: center;
   color: var(--sand);
+}
+
+/* MOBILE RESPONSIVE */
+@media(max-width:900px){
+
+  header {
+    padding: 20px;
+  }
+
+  nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: var(--charcoal);
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    display: none;
+    padding: 20px 0;
+    z-index: 9999;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    padding: 15px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+    z-index: 10000;
+  }
+
+  .section-block {
+    flex-direction: column;
+    text-align: center;
+    padding: 70px 8%;
+  }
+
+  .section-block .section-text {
+    margin-top: 30px;
+  }
+
 }
 </style>
 </head>
@@ -116,35 +171,46 @@ footer {
 <body>
 
 <header>
-  <h1>PRAYER</h1>
-    <nav>
+  <div class="logo">MOORE MANNA</div>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <nav id="nav-menu">
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
     <a href="contact.html">Contact</a>
     <a href="donate.html">Donate</a>
-    <a href="volunteer.html">Volunteer</a>
-    </nav>
-
+    <a href="prayer.html">Prayer</a>
+    <a href="volunteer.html">Volunteer</a>  
+  </nav>
 </header>
 
-<section>
-  <h2>Prayer Requests</h2>
-  <p>
-    We believe in the power of prayer. If you or someone you know needs prayer, 
-    please submit your request below. Our team is honored to stand with you in faith.
-  </p>
-</section>
-
-<section class="alt">
-  <h2>Contact Information</h2>
-  <div class="contact-info">
-    <p>prayer@mooremanna.org</p>
+<!-- SECTION 1 -->
+<div class="section-block">
+  <img src="moore_manna_photos/31.png" alt="Prayer team serving">
+  <div class="section-text">
+    <h2>Prayer Requests</h2>
+    <p>We believe in the power of prayer. If you or someone you know needs prayer, please submit your request below. Our team is honored to stand with you in faith.</p>
   </div>
-</section>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section-block alt">
+  <div class="section-text">
+    <h2>Submit a Prayer</h2>
+    <p>Email: prayer@mooremanna.org</p>
+  </div>
+  <img src="moore_manna_photos/0.png" alt="Community praying together">
+</div>
 
 <footer>
   © 2026 Moore Manna Nonprofit | 501(c)(3)
 </footer>
+
+<script>
+// Mobile menu toggle
+function toggleMenu() {
+  document.getElementById("nav-menu").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
