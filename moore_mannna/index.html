@@ -5,18 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Moore Manna</title>
 
-<!-- Updated Google Fonts Link for Merriweather -->
-<link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
+
 :root {
-  --ash-grey: #173F5F;
-  --smoke-grey: #f2f1f1;
-  --charcoal: #141416;
-  --sand: #fbbc58;
-  --light-sand: #ffffff;
-  --highlight: #fbbc58;
+  --deep-blue: #000000;
+  --light-gray: #f2f1f1;
+  --yellow-bg: #e2b808;
+  --white: #ffffff;
+  --black-text: #000000;
 }
+
+/* RESET */
 
 * {
   margin: 0;
@@ -25,77 +26,101 @@
 }
 
 body {
-  background: var(--ash-grey);
-  color: white;
+  background: var(--deep-blue);
+  color: var(--white);
   line-height: 1.7;
-  scroll-behavior: smooth;
   font-size: 22px;
-  font-family: 'Merriweather', serif; /* Updated to Merriweather */
+  font-family: 'Merriweather', serif;
 }
 
-/* =========================
-   HERO SECTION
-========================= */
+/* HEADER + NAV */
 
 header {
-  padding-top: 0px;
-  text-align: center;
-  position: relative;
-}
-
-/* Top Navigation */
-.top-nav {
   position: absolute;
-  top: 30px;
-  right: 40px;
-  z-index: 5;
+  top: 0;
+  width: 100%;
+  padding: 20px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
 }
 
-.top-nav a {
-  text-decoration: none;
-  color: white;
+.logo {
+  font-weight: 900;
+  font-size: 28px;
+  color: var(--white);
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  color: var(--white);
   font-weight: bold;
-  letter-spacing: 1px;
+  text-decoration: none;
   transition: 0.3s ease;
 }
 
-.top-nav a:hover {
-  color: var(--sand);
+nav a:hover {
+  color: var(--yellow-bg);
 }
 
-/* Headline Section */
-.hero-top {
-  padding: 50px;
-  text-align: center;
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
 }
 
-/* LOGO MADE BIGGER */
-.banner-logo {
-  width: 900px; 
-  height: auto;
-  display: block;
-  margin: 0 auto 30px auto;
+/* HERO */
+
+.hero {
+  width: 100%;
+  height: 75vh;
+  background: url("moore_manna_photos/black_sheep.png") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 8%;
+  position: relative;
 }
 
-header h1 {
-  font-family: 'Merriweather', serif; /* Updated to Merriweather */
-  font-size: clamp(3.5rem, 8vw, 8rem);
-  letter-spacing: 4px;
-  line-height: 1;
-  text-transform: uppercase;
-  color: white;
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
 }
 
-/* =========================
-   PHOTO STRIP
-========================= */
+.hero h1 {
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+}
+
+.highlight-word {
+  color: var(--yellow-bg);
+  font-weight: 700;
+}
+
+.hero-logo {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  width: 140px;
+  z-index: 2;
+}
+
+/* PHOTO STRIP */
 
 .photo-strip {
   width: 100%;
   overflow: hidden;
-  background: var(--smoke-grey);
+  background: var(--light-gray);
   padding: 40px 0;
-  position: relative;
 }
 
 .photo-track {
@@ -107,7 +132,6 @@ header h1 {
 
 .photo-track img {
   height: 260px;
-  width: auto;
   border-radius: 14px;
   object-fit: cover;
   flex-shrink: 0;
@@ -127,84 +151,115 @@ header h1 {
   100% { transform: translateX(-50%); }
 }
 
-/* =========================
-   SECTIONS
-========================= */
+/* MISSION INTRO */
 
-section {
-  padding: 100px 10%;
+.mission-intro{
+  background: var(--light-gray);
+  color: var(--black-text);
+  padding: 120px 10%;
   text-align: center;
 }
 
-section h2 {
-  font-family: 'Merriweather', serif; /* Updated to Merriweather */
-  font-size: 2.5rem;
-  margin-bottom: 25px;
-  color: var(--highlight);
-  letter-spacing: 2px;
+.mission-intro h2,
+.commitment h3{
+  width:100%;
+  text-align:center;
+  font-size:52px;
+  font-weight:1000;
+  margin-bottom:40px;
 }
 
-.alt-section {
-  background: var(--smoke-grey);
+.mission-intro p{
+  max-width: 900px;
+  margin: 20px auto;
+  font-size: 1.3rem;
+  line-height: 1.8;
 }
 
-.scripture {
-  margin-top: 20px;
+.mission-verse{
   font-style: italic;
+  margin: 40px auto;
+  max-width: 700px;
 }
 
-/* =========================
-   INITIATIVES
-========================= */
+.commitment{
+  margin-top: 60px;
+}
 
-.initiatives {
+.commitment h3{
+  font-size: 52px;
+  margin-bottom: 20px;
+}
+
+/* INITIATIVES */
+
+.initiatives-section {
+  position: relative;
+  padding: 140px 10%;
+  background-image: url("moore_manna_photos/stained_bg.png");
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.initiatives-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px 80px;
+  align-items: center;
 }
 
-.card {
-  background: var(--ash-grey); /* LIGHTER GREY */
+.mission-word {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  line-height: 1.1;
+  color: var(--black-text);
+}
+
+.mission-box {
+  background: rgba(255,255,255,0.95);
   padding: 40px;
-  border-radius: 14px;
-  border: 1px solid rgba(216,195,165,0.25);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.35); /* subtle depth */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 16px;
+  color: var(--black-text);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 
-.card h3 {
-  color: var(--highlight);
+.mission-box span {
+  font-weight: 900;
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 45px rgba(0,0,0,0.45);
+.mission-box:nth-of-type(4) {
+  transform: translateX(40px);
 }
 
-/* =========================
-   EVENTS
-========================= */
+.mission-box:nth-of-type(6) {
+  transform: translateX(80px);
+}
+
+/* EVENTS */
+
+.events {
+  padding: 100px 10%;
+  text-align: center;
+}
 
 .events iframe {
   width: 100%;
   height: 600px;
   border: none;
   border-radius: 10px;
-  margin-top: 30px;
 }
 
-/* =========================
-   CTA
-========================= */
+/* CTA */
 
 .cta {
-  background: var(--sand);
-  color: var(--charcoal);
-}
-
-.cta h2 {
-  color: var(--charcoal);
+  background: var(--yellow-bg);
+  color: var(--deep-blue);
+  padding: 100px 10%;
+  text-align: center;
 }
 
 .button-group {
@@ -218,191 +273,283 @@ section h2 {
   font-weight: bold;
   display: inline-block;
   margin: 10px;
+  background: var(--deep-blue);
+  color: var(--white);
   transition: 0.3s ease;
 }
 
-.cta .btn {
-  background: var(--charcoal);
-  color: var(--sand);
+.btn:hover {
+  background: #494949;
 }
 
-.cta .btn:hover {
-  background: black;
-}
-
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer {
-  background: var(--charcoal);
+  background: var(--deep-blue);
   padding: 40px;
   text-align: center;
-  color: var(--sand);
+  color: var(--white);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* MOBILE */
+@media(max-width:900px){
 
-@media(max-width:768px){
-  header h1 { font-size: 3rem; }
-  .banner-logo { width: 280px; }
-  .photo-track img { height: 180px; }
-  section { padding: 70px 8%; }
-  .photo-strip {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  .photo-track {
-    animation: none;
-  }
-  .photo-strip::-webkit-scrollbar {
-    display: none;
-  }
+.hero {
+  height: 65vh;
+  padding: 0 20px;
+  justify-content: center;
+  text-align: center;
 }
+
+.hero h1 {
+  max-width: 100%;
+  font-size: clamp(1.5rem, 6vw, 2.2rem);
+}
+
+.hero-logo {
+  width: 90px;
+  bottom: 20px;
+  right: 20px;
+}
+
+.photo-track img { 
+  height: 180px; 
+}
+
+.photo-strip {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.photo-track { 
+  animation: none; 
+}
+
+.photo-strip::-webkit-scrollbar { 
+  display: none; 
+}
+
+/* MOBILE MENU */
+
+nav {
+  position: absolute;
+  top: 70px;
+  right: 0;
+  background: rgba(0,0,0,0.9);
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  display: none;
+  padding: 20px 0;
+}
+
+nav.active { 
+  display: flex; 
+}
+
+nav a { 
+  padding: 15px 0; 
+}
+
+.menu-toggle { 
+  display: block; 
+}
+
+/* FIX FOR MISSION / COMMITMENT TITLES */
+
+.mission-intro h2,
+.commitment h3{
+  font-size:36px;
+}
+
+/* INITIATIVES MOBILE */
+
+.initiatives-grid {
+  grid-template-columns: 1fr;
+}
+
+.mission-word {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.mission-box {
+  transform: none !important;
+  font-size: 1rem;
+}
+
+}
+
 </style>
 </head>
-
 
 <body>
 
 <header>
 
-  <!-- Top Right Navigation -->
-  <nav class="top-nav">
-    <a href="about.html">About Us</a>
-  </nav>
+<div class="logo">MOORE MANNA</div>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-  <!-- Headline Section -->
-  <div class="hero-top">
-    <img src="moore_manna_photos/full_logo_mm.png" alt="Moore Manna" class="banner-logo">
-  </div>
-
-  <!-- Horizontal Sliding Photo Strip -->
-  <div class="photo-strip">
-    <div class="photo-track">
-      <!-- KEEPING ALL YOUR ORIGINAL PHOTOS -->
-      <img src='moore_manna_photos/1.png'>
-      <img src='moore_manna_photos/2.png'>
-      <img src='moore_manna_photos/3.png'>
-      <img src='moore_manna_photos/4.png'>
-      <img src='moore_manna_photos/5.png'>
-      <img src='moore_manna_photos/6.png'>
-      <img src='moore_manna_photos/7.png'>
-      <img src='moore_manna_photos/8.png'>
-      <img src='moore_manna_photos/9.png'>
-      <img src='moore_manna_photos/10.png'>
-      <img src='moore_manna_photos/11.png'>
-      <img src='moore_manna_photos/12.png'>
-      <img src='moore_manna_photos/13.png'>
-      <img src='moore_manna_photos/14.png'>
-      <img src='moore_manna_photos/15.png'>
-      <img src='moore_manna_photos/16.png'>
-      <img src='moore_manna_photos/17.png'>
-      <img src='moore_manna_photos/18.png'>
-      <img src='moore_manna_photos/19.png'>
-      <img src='moore_manna_photos/20.png'>
-      <img src='moore_manna_photos/21.png'>
-      <img src='moore_manna_photos/22.png'>
-      <img src='moore_manna_photos/23.png'>
-      <img src='moore_manna_photos/24.png'>
-      <img src='moore_manna_photos/25.png'>
-      <img src='moore_manna_photos/26.png'>
-      <img src='moore_manna_photos/27.png'>
-      <img src='moore_manna_photos/28.png'>
-      <img src='moore_manna_photos/29.png'>
-      <img src='moore_manna_photos/30.png'>
-      <img src='moore_manna_photos/31.png'>
-      <img src='moore_manna_photos/0.png'>
-      <!-- duplicate set for seamless scroll -->
-      <img src='moore_manna_photos/1.png'>
-      <img src='moore_manna_photos/2.png'>
-      <img src='moore_manna_photos/3.png'>
-      <img src='moore_manna_photos/4.png'>
-      <img src='moore_manna_photos/5.png'>
-      <img src='moore_manna_photos/6.png'>
-      <img src='moore_manna_photos/7.png'>
-      <img src='moore_manna_photos/8.png'>
-      <img src='moore_manna_photos/9.png'>
-      <img src='moore_manna_photos/10.png'>
-      <img src='moore_manna_photos/11.png'>
-      <img src='moore_manna_photos/12.png'>
-      <img src='moore_manna_photos/13.png'>
-      <img src='moore_manna_photos/14.png'>
-      <img src='moore_manna_photos/15.png'>
-      <img src='moore_manna_photos/16.png'>
-      <img src='moore_manna_photos/17.png'>
-      <img src='moore_manna_photos/18.png'>
-      <img src='moore_manna_photos/19.png'>
-      <img src='moore_manna_photos/20.png'>
-      <img src='moore_manna_photos/21.png'>
-      <img src='moore_manna_photos/22.png'>
-      <img src='moore_manna_photos/23.png'>
-      <img src='moore_manna_photos/24.png'>
-      <img src='moore_manna_photos/25.png'>
-      <img src='moore_manna_photos/26.png'>
-      <img src='moore_manna_photos/27.png'>
-      <img src='moore_manna_photos/28.png'>
-      <img src='moore_manna_photos/29.png'>
-      <img src='moore_manna_photos/30.png'>
-      <img src='moore_manna_photos/31.png'>
-      <img src='moore_manna_photos/0.png'>
-    </div>
-  </div>
+<nav id="nav-menu">
+<a href="index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="contact.html">Contact</a>
+<a href="donate.html">Donate</a>
+<a href="prayer.html">Prayer</a>
+<a href="volunteer.html">Volunteer</a>
+</nav>
 
 </header>
 
-<!-- REST OF YOUR PAGE REMAINS EXACTLY THE SAME -->
+<div class="hero">
 
-<section>
-  <h2>Our Mission</h2>
-  <p>
-    We feed, empower and equip those in need across Moore
-    County through Christ-centered discipleship.
-  </p>
-  <p class="scripture">
-    "...I therefore command you, ‘Open your hand to the poor and needy neighbor in your land' " - Deuteronomy 15:11
-  </p>
+<h1>
+Join us in bringing <span class="highlight-word">hope</span>
+to the hungry.
+</h1>
+
+<img src="moore_manna_photos/yellow_logo.png"
+alt="Moore Manna Logo"
+class="hero-logo">
+
+</div>
+
+<!-- PHOTO STRIP -->
+
+<div class="photo-strip">
+<div class="photo-track">
+
+<img src='moore_manna_photos/1.png'>
+<img src='moore_manna_photos/2.png'>
+<img src='moore_manna_photos/3.png'>
+<img src='moore_manna_photos/4.png'>
+<img src='moore_manna_photos/5.png'>
+<img src='moore_manna_photos/6.png'>
+<img src='moore_manna_photos/7.png'>
+<img src='moore_manna_photos/8.png'>
+<img src='moore_manna_photos/9.png'>
+<img src='moore_manna_photos/10.png'>
+<img src='moore_manna_photos/11.png'>
+<img src='moore_manna_photos/12.png'>
+<img src='moore_manna_photos/13.png'>
+<img src='moore_manna_photos/14.png'>
+<img src='moore_manna_photos/15.png'>
+<img src='moore_manna_photos/16.png'>
+<img src='moore_manna_photos/17.png'>
+<img src='moore_manna_photos/18.png'>
+<img src='moore_manna_photos/19.png'>
+<img src='moore_manna_photos/20.png'>
+<img src='moore_manna_photos/21.png'>
+<img src='moore_manna_photos/22.png'>
+<img src='moore_manna_photos/23.png'>
+<img src='moore_manna_photos/24.png'>
+<img src='moore_manna_photos/25.png'>
+<img src='moore_manna_photos/26.png'>
+<img src='moore_manna_photos/27.png'>
+<img src='moore_manna_photos/28.png'>
+<img src='moore_manna_photos/29.png'>
+<img src='moore_manna_photos/30.png'>
+<img src='moore_manna_photos/31.png'>
+<img src='moore_manna_photos/0.png'>
+
+</div>
+</div>
+
+<section class="mission-intro">
+
+<h2>Our Mission</h2>
+
+<p>
+We feed, empower and equip those in need across Moore County
+through Christ-centered discipleship.
+</p>
+
+<p class="mission-verse">
+"...I therefore command you, ‘Open your hand to the poor and needy neighbor in your land'"
+<br>
+<strong>Deuteronomy 15:11</strong>
+</p>
+
+<div class="commitment">
+
+<h3>Our Commitment</h3>
+
+<p>
+In everything we do, we seek to bring glory to Jesus Christ.
+We serve with honesty, transparency, and the strength that God provides
+<strong>(1 Peter 4:11)</strong>.
+</p>
+
+<p>
+We believe that no person is beyond the reach of God’s grace.
+Our teams act as a <strong>"beacon of hope"</strong> in the darkness,
+trusting that God can rebuild even the most broken lives.
+</p>
+
+</div>
+
 </section>
 
-<section class="alt-section">
-  <div class="initiatives">
-    <div class="card">
-      <h3>FEED</h3>
-      <p>We do not just provide a meal; we believe in meeting urgent physical needs with the highest level of dignity and grace.</p>
-    </div>
-    <div class="card">
-      <h3>EMPOWER</h3>
-      <p>We empower individuals by recognizing their God-given potential and helping them find hope, healing, and the strength to overcome their current struggle by way of Christ-centered discipleship.</p>
-    </div>
-    <div class="card">
-      <h3>EQUIP</h3>
-      <p>We equip our neighbors with the practical tools, skills, and spiritual foundation necessary to sustain a transformed life.</p>
-    </div>
-  </div>
+<section class="initiatives-section">
+
+<div class="initiatives-grid">
+
+<div class="mission-word">Feed.</div>
+<div class="mission-box">
+We <span>feed</span> the hungry both in body and spirit by delivering a hot meal and sharing the Gospel of Jesus Christ
+</div>
+
+<div class="mission-word">Empower.</div>
+<div class="mission-box">
+We <span>empower</span> individuals to find hope, healing, and the strength to overcome their current struggle by way of Christ-centered discipleship
+</div>
+
+<div class="mission-word">Equip.</div>
+<div class="mission-box">
+We <span>equip</span> people with the practical tools, skills, and spiritual foundation necessary to sustain a transformed life
+</div>
+
+</div>
+
 </section>
 
 <section class="events">
-  <h2>Upcoming Events</h2>
-  <iframe src="https://calendar.google.com/calendar/embed?src=c_d40182f8fc9a12beb3d2a8a7f8e25c150146a1823e97d8b07885b14708b26c3b@group.calendar.google.com&ctz=America/New_York"></iframe>
+
+<h2>Upcoming Events</h2>
+
+<iframe src="https://calendar.google.com/calendar/embed?src=c_d40182f8fc9a12beb3d2a8a7f8e25c150146a1823e97d8b07885b14708b26c3b@group.calendar.google.com&ctz=America/New_York"></iframe>
+
 </section>
 
-<section class="cta" id="get-involved">
-  <h2>Get Involved</h2>
-  <p>Your support makes the mission possible.</p>
+<section class="cta">
 
-  <div class="button-group">
-    <a href="contact.html" class="btn">Contact Us</a>
-    <a href="donate.html" class="btn">Donate</a>
-    <a href="prayer.html" class="btn">Prayer</a>
-    <a href="volunteer.html" class="btn">Volunteer</a>
-  </div>
+<h2>Get Involved</h2>
+<p>Your support makes the mission possible.</p>
+
+<div class="button-group">
+
+<a href="contact.html" class="btn">Contact Us</a>
+<a href="donate.html" class="btn">Donate</a>
+<a href="prayer.html" class="btn">Prayer</a>
+<a href="volunteer.html" class="btn">Volunteer</a>
+
+</div>
+
 </section>
 
 <footer>
-  <p>© 2026 Moore Manna Nonprofit | 501(c)(3)</p>
+
+<p>© 2026 Moore Manna Nonprofit | 501(c)(3)</p>
+
 </footer>
+
+<script>
+
+function toggleMenu() {
+document.getElementById("nav-menu").classList.toggle("active");
+}
+
+</script>
 
 </body>
 </html>
