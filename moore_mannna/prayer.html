@@ -5,166 +5,193 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Prayer | Moore Manna</title>
 
-<!-- Updated Google Fonts Link for Merriweather -->
 <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
 
 <style>
+
 :root {
-  --ash-grey: #173F5F;
-  --smoke-grey: #f2f1f1;
-  --charcoal: #141416;
-  --sand: #fbbc58;
-  --light-sand: #ffffff;
-  --highlight: #fbbc58;
+  --white: #ffffff;
+  --black-text: #000000;
+  --yellow: #e2b808;
+  --menu-dark: rgba(0,0,0,0.8);
 }
 
-* { margin:0; padding:0; box-sizing:border-box; }
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-body {
-  background: var(--ash-grey);
-  color: white;
-  font-family: 'Merriweather', serif; /* Updated to Merriweather */
-  line-height: 1.7;
-  font-size: 22px;
+body{
+  font-family:'Merriweather', serif;
+  font-size:22px;
+  line-height:1.7;
+  color:var(--white);
+  background:url('moore_manna_photos/back_splash_prayer.png') center/cover no-repeat fixed;
 }
 
 /* HEADER + NAV */
-header {
-  background: var(--charcoal);
-  padding: 20px 10%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  z-index: 10;
+header{
+  position:relative;
+  padding:20px 10%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:var(--menu-dark);
+  z-index:10;
 }
 
-.logo {
-  font-family: 'Anton', sans-serif;
-  font-size: 28px;
-  letter-spacing: 2px;
+.logo{
+  font-weight:900;
+  font-size:28px;
+  color:var(--white);
 }
 
-nav {
-  display: flex;
-  gap: 30px;
+nav{
+  display:flex;
+  gap:30px;
 }
 
-nav a {
-  color: white;
+nav a{
+  color:var(--white);
+  font-weight:bold;
+  text-decoration:none;
+  transition:0.3s ease;
+}
+
+nav a:hover{
+  color:var(--yellow);
+}
+
+.menu-toggle{
+  display:none;
+  font-size:30px;
+  cursor:pointer;
+}
+
+/* PAGE HEADER */
+.page-header{
+  width:100%;
+  text-align:center;
+  font-size:52px;
+  font-weight:1000;
+  color:var(--black-text);
+  margin-bottom:40px;
+}
+
+.page-header span{
+  color:var(--yellow);
+}
+
+/* MAIN SECTION */
+section{
+  padding:140px 10%;
+}
+
+/* PRAYER TOP BLOCK */
+.prayer-intro{
+  text-align:center;
+  color:var(--black-text);
+  max-width:800px;
+  margin:auto;
+}
+
+.prayer-intro p{
+  font-size:2rem;       
+  font-weight:bold;      
+  line-height:1.4;      
+  margin-bottom:20px;
+}
+
+.scripture{
+  font-style:italic;
+  margin-top:10px;
+}
+
+/* PRAYER CONTACT BLOCK */
+.prayer-block{
+  background:var(--menu-dark);
+  padding:80px 10%;
+  text-align:center;
+}
+
+.prayer-block h2{
+  color:var(--yellow);
+  margin-bottom:20px;
+}
+
+/* BUTTON */
+.btn {
+  padding: 16px 50px;
   text-decoration: none;
+  border-radius: 40px;
   font-weight: bold;
-}
-
-nav a:hover {
-  color: var(--sand);
-}
-
-.menu-toggle {
-  display: none;
-  font-size: 30px;
-  cursor: pointer;
-  z-index: 10000;
-}
-
-/* SECTION BLOCKS */
-.section-block {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 50px;
-  padding: 80px 10%;
-  flex-wrap: wrap;
-}
-
-.section-block img {
-  width: 100%;
-  max-width: 420px;
-  border-radius: 14px;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-  object-fit: cover;
-}
-
-.section-block .section-text {
-  flex: 1;
-  min-width: 280px;
-}
-
-.section-text p {
-  margin-bottom: 20px;
-}
-
-.section-text h2 {
-  font-family: 'Merriweather', serif; /* Updated to Merriweather */
-  font-size: 2.5rem;
-  color: var(--highlight);
-  margin-bottom: 25px;
-}
-
-.alt {
-  background: var(--smoke-grey);
-  padding-top: 40px;
-  padding-bottom: 40px;
+  display: inline-block;
+  transition: 0.3s ease;
+  margin-top: 30px;
+  background: var(--yellow);
+  color: var(--black-text);
   text-align: center;
 }
 
-/* Make only email text black */
-.alt .section-text p {
-  color: black; /* email will now appear black */
+.btn:hover {
+  background: #f4d25a;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  header{
+    padding:20px;
+  }
+
+  nav{
+    position:absolute;
+    top:70px;
+    right:0;
+    background:rgba(0,0,0,0.9);
+    flex-direction:column;
+    width:100%;
+    text-align:center;
+    display:none;
+    padding:20px 0;
+    z-index:9999;
+  }
+
+  nav.active{
+    display:flex;
+  }
+
+  nav a{
+    padding:15px 0;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+
+  section{
+    padding:80px 8%;
+  }
+
+  .page-header{
+    font-size:40px;
+    margin-bottom:20px;
+  }
+
+  .prayer-intro p{
+    font-size:1.8rem;
+  }
 }
 
 /* FOOTER */
-footer {
-  background: var(--charcoal);
-  padding: 40px;
-  text-align: center;
-  color: var(--sand);
+footer{
+  background:var(--menu-dark);
+  padding:40px;
+  text-align:center;
+  color:var(--white);
 }
 
-/* MOBILE RESPONSIVE */
-@media(max-width:900px){
-
-  header {
-    padding: 20px;
-  }
-
-  nav {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: var(--charcoal);
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    display: none;
-    padding: 20px 0;
-    z-index: 9999;
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  nav a {
-    padding: 15px 0;
-  }
-
-  .menu-toggle {
-    display: block;
-    z-index: 10000;
-  }
-
-  .section-block {
-    flex-direction: column;
-    text-align: center;
-    padding: 70px 8%;
-  }
-
-  .section-block .section-text {
-    margin-top: 30px;
-  }
-
-}
 </style>
 </head>
 
@@ -173,41 +200,41 @@ footer {
 <header>
   <div class="logo">MOORE MANNA</div>
   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
   <nav id="nav-menu">
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
     <a href="contact.html">Contact</a>
     <a href="donate.html">Donate</a>
     <a href="prayer.html">Prayer</a>
-    <a href="volunteer.html">Volunteer</a>  
+    <a href="volunteer.html">Volunteer</a>
   </nav>
 </header>
 
-<!-- SECTION 1 -->
-<div class="section-block">
-  <img src="moore_manna_photos/31.png" alt="Prayer team serving">
-  <div class="section-text">
-    <h2>Prayer Requests</h2>
-    <p>We believe in the power of prayer. If you or someone you know needs prayer, please submit your request below. Our team is honored to stand with you in faith.</p>
-  </div>
-</div>
+<section>
+  <h1 class="page-header"><span>Prayer </span>Requests</h1>
 
-<!-- SECTION 2 -->
-<div class="section-block alt">
-  <div class="section-text">
-    <h2>Submit a Prayer</h2>
-    <p>Email: prayer@mooremanna.org</p>
+  <div class="prayer-intro">
+    <p>We believe in the power of prayer. If you or someone you know needs prayer, please submit your request below. Our team is honored to stand with you in faith.</p>
+
+    <p class="scripture">"Therefore I tell you, whatever you ask for in <span>prayer</span>, believe that you have received it, and it will be yours" – Mark 11:24</p>
   </div>
-  <img src="moore_manna_photos/0.png" alt="Community praying together">
-</div>
+</section>
+
+<section class="prayer-block">
+  <!--<h2>Submit a Prayer</h2>-->
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLScQmbkB2K1db15xUQLTozd6x2xOWgvWt0bQyUTsjDRiLQxOqQ/viewform?pli=1" 
+     target="_blank" rel="noopener noreferrer" class="btn">
+    Submit Prayer Request
+  </a>
+</section>
 
 <footer>
   © 2026 Moore Manna Nonprofit | 501(c)(3)
 </footer>
 
 <script>
-// Mobile menu toggle
-function toggleMenu() {
+function toggleMenu(){
   document.getElementById("nav-menu").classList.toggle("active");
 }
 </script>
