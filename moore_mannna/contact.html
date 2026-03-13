@@ -5,219 +5,242 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | Moore Manna</title>
 
-<!-- Updated Google Fonts Link for Merriweather -->
 <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
 
 <style>
+
 :root {
-  --ash-grey: #173F5F;
-  --smoke-grey: #f2f1f1;
-  --charcoal: #141416;
-  --sand: #fbbc58;
-  --light-sand: #ffffff;
-  --highlight: #fbbc58;
+  --white: #ffffff;
+  --black-text: #000000;
+  --yellow: #e2b808;
+  --menu-dark: rgba(0,0,0,0.8);
 }
 
-* { margin:0; padding:0; box-sizing:border-box; }
+/* RESET */
 
-body {
-  background: var(--ash-grey);
-  color: white;
-  font-family: 'Merriweather', serif; /* Updated to Merriweather */
-  line-height: 1.7;
-  font-size: 22px;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Merriweather', serif;
+  font-size:22px;
+  line-height:1.7;
+  color:var(--white);
+  background:url('moore_manna_photos/black_splash_contact.png') center/cover no-repeat fixed;
 }
 
 /* HEADER + NAV */
-header {
-  background: var(--charcoal);
-  padding: 20px 10%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  z-index: 10;
+
+header{
+  position:relative;
+  padding:20px 10%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:var(--menu-dark);
+  z-index:10;
 }
 
-/* LOGO TEXT (optional – can replace with image later) */
-.logo {
-  font-family: 'Anton', sans-serif;
-  font-size: 28px;
-  letter-spacing: 2px;
+.logo{
+  font-weight:900;
+  font-size:28px;
+  color:var(--white);
 }
 
-/* NAV LINKS */
-nav {
-  display: flex;
-  gap: 30px;
+nav{
+  display:flex;
+  gap:30px;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+nav a{
+  color:var(--white);
+  font-weight:bold;
+  text-decoration:none;
+  transition:0.3s ease;
 }
 
-nav a:hover {
-  color: var(--sand);
+nav a:hover{
+  color:var(--yellow);
 }
 
-/* HAMBURGER BUTTON */
-.menu-toggle {
-  display: none;
-  font-size: 30px;
-  cursor: pointer;
-  z-index: 10000;
+.menu-toggle{
+  display:none;
+  font-size:30px;
+  cursor:pointer;
 }
 
-/* SECTIONS */
-section {
-  padding: 100px 10%;
-  text-align: center;
+/* PAGE HEADER */
+
+.page-header{
+  width:100%;
+  text-align:center;
+  font-size:52px;
+  font-weight:1000;
+  color:var(--black-text);
+  margin-bottom:30px;
 }
 
-section h2 {
-  font-family: 'Merriweather', serif; /* Updated to Merriweather */
-  font-size: 2.5rem;
-  color: var(--highlight);
-  margin-bottom: 25px;
+.page-header span{
+  color:var(--yellow);
 }
 
-/* Contact Info Section - white background, black text */
-.alt {
-  background: var(--light-sand); /* white background */
-  color: black; /* default text black */
+/* MAIN SECTION */
+
+section{
+  padding:140px 10%;
 }
 
-.alt .contact-info p {
-  margin: 10px 0;
-  color: black; /* ensure email and phone text is black */
+.contact-intro{
+  text-align:center;
+  color:var(--black-text);
+  max-width:800px;
+  margin:auto;
 }
 
-/* FORM */
-form {
-  margin-top: 40px;
+.contact-intro p{
+  margin-bottom:20px;
 }
 
-input, textarea {
-  width: 100%;
-  max-width: 600px;
-  padding: 15px;
-  margin: 12px auto;
-  display: block;
-  border-radius: 8px;
-  border: none;
-  font-size: 16px;
+.scripture{
+  font-style:italic;
 }
 
-button {
-  padding: 14px 40px;
-  border-radius: 40px;
-  border: none;
-  background: var(--sand);
-  color: var(--charcoal);
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 20px;
+/* CONTACT BLOCK */
+
+.contact-block{
+  background:var(--menu-dark);
+  padding:80px 10%;
+  text-align:center;
 }
 
-button:hover {
-  background: var(--light-sand);
+.contact-block h2{
+  color:var(--yellow);
+  margin-bottom:20px;
 }
 
-.scripture {
-  margin-top: 20px;
-  font-style: italic;
+.contact-info p{
+  margin:10px 0;
+  color:var(--white);
 }
 
-footer {
-  background: var(--charcoal);
-  padding: 40px;
-  text-align: center;
-  color: var(--sand);
-}
+/* MOBILE */
 
-/* MOBILE RESPONSIVE */
 @media(max-width:900px){
-  header {
-    padding: 20px;
+
+  header{
+    padding:20px;
   }
 
-  nav {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: var(--charcoal);
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    display: none;
-    padding: 20px 0;
-    z-index: 9999;
+  nav{
+    position:absolute;
+    top:70px;
+    right:0;
+    background:rgba(0,0,0,0.9);
+    flex-direction:column;
+    width:100%;
+    text-align:center;
+    display:none;
+    padding:20px 0;
+    z-index:9999;
   }
 
-  nav.active {
-    display: flex;
+  nav.active{
+    display:flex;
   }
 
-  nav a {
-    padding: 15px 0;
+  nav a{
+    padding:15px 0;
   }
 
-  .menu-toggle {
-    display: block;
-    z-index: 10000; /* always above photos too */
+  .menu-toggle{
+    display:block;
   }
 
-  section { padding: 70px 8%; }
+  section{
+    padding:80px 8%;
+  }
+
+  .page-header{
+    font-size:40px;
+    margin-bottom:20px;
+  }
+
 }
+
+/* FOOTER */
+
+footer{
+  background:var(--menu-dark);
+  padding:40px;
+  text-align:center;
+  color:var(--white);
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">MOORE MANNA</div>
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-  <nav id="nav-menu">
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact</a>
-    <a href="donate.html">Donate</a>
-    <a href="prayer.html">Prayer</a>
-    <a href="volunteer.html">Volunteer</a>  
-  </nav>
+
+<div class="logo">MOORE MANNA</div>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<nav id="nav-menu">
+<a href="index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="contact.html">Contact</a>
+<a href="donate.html">Donate</a>
+<a href="prayer.html">Prayer</a>
+<a href="volunteer.html">Volunteer</a>
+</nav>
+
 </header>
 
 <section>
-  <h2>Get In Touch</h2>
-  <p>
-    We'd love to connect with you. Whether you have questions,
-    partnership inquiries, or need assistance — reach out.
-  </p>
-  <p class="scripture">
-    “Let all that you do be done in love.” - 1 Corinthians 16:14
-  </p>
+
+<h1 class="page-header">Let's <span>Connect</span></h1>
+
+<div class="contact-intro">
+
+<p>
+We'd love to connect with you. Whether you have questions,
+partnership inquiries, or need assistance — reach out.
+</p>
+
+<p class="scripture">
+“Let all that you do be done in love.” – 1 Corinthians 16:14
+</p>
+
+</div>
+
 </section>
 
-<section class="alt">
-  <h2>Contact information</h2>
-  <div class="contact-info">
-    <p>Email: info@mooremanna.org</p>
-    <p>Phone: (000) 000-0000</p>
-    <p>Serving Moore County, North Carolina</p>
-  </div>
+<section class="contact-block">
+
+<h2>Contact Information</h2>
+
+<div class="contact-info">
+<p>Email: info@mooremanna.org</p>
+<p>Phone: (000) 000-0000</p>
+<p>Serving Moore County, North Carolina</p>
+</div>
+
 </section>
 
 <footer>
-  © 2026 Moore Manna Nonprofit | 501(c)(3)
+© 2026 Moore Manna Nonprofit | 501(c)(3)
 </footer>
 
 <script>
-// Mobile menu toggle
-function toggleMenu() {
-  document.getElementById("nav-menu").classList.toggle("active");
+
+function toggleMenu(){
+document.getElementById("nav-menu").classList.toggle("active");
 }
+
 </script>
 
 </body>
