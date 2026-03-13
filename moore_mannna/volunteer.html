@@ -5,199 +5,227 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Volunteer | Moore Manna</title>
 
-<!-- Updated Google Fonts Link -->
 <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --ash-grey: #173F5F;
-  --smoke-grey: #f2f1f1;
-  --charcoal: #141416;
-  --sand: #fbbc58; /* yellow */
-  --light-sand: #ffffff;
-  --highlight: #fbbc58;
-  --blue-background: #173F5F; /* same as body background */
+:root{
+  --white:#ffffff;
+  --black-text:#000000;
+  --yellow:#e2b808;
+  --menu-dark:rgba(0,0,0,0.8);
 }
 
-* { margin:0; padding:0; box-sizing:border-box; }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-body {
-  background: var(--ash-grey);
-  color: white;
-  font-family: 'Merriweather', serif; /* Updated to Merriweather */
-  line-height: 1.7;
-  font-size: 22px;
+body{
+  font-family:'Merriweather', serif;
+  font-size:22px;
+  line-height:1.7;
+  color:var(--white);
+  background:url('moore_manna_photos/back_splash_volunteer.png') center/cover no-repeat fixed;
 }
 
 /* HEADER + NAV */
-header {
-  background: var(--charcoal);
-  padding: 20px 10%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  z-index: 10;
+header{
+  position:relative;
+  padding:20px 10%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:var(--menu-dark);
+  z-index:10;
 }
 
-.logo {
-  font-family: 'Anton', sans-serif;
-  font-size: 28px;
-  letter-spacing: 2px;
+.logo{
+  font-weight:900;
+  font-size:28px;
+  color:var(--white);
 }
 
-nav {
-  display: flex;
-  gap: 30px;
+nav{
+  display:flex;
+  gap:30px;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+nav a{
+  color:var(--white);
+  font-weight:bold;
+  text-decoration:none;
+  transition:0.3s ease;
 }
 
-nav a:hover {
-  color: var(--sand);
+nav a:hover{
+  color:var(--yellow);
 }
 
-.menu-toggle {
-  display: none;
-  font-size: 30px;
-  cursor: pointer;
-  z-index: 10000;
+.menu-toggle{
+  display:none;
+  font-size:30px;
+  cursor:pointer;
 }
 
-/* VOLUNTEER TOP BLOCK */
-.volunteer-top {
-  display: flex;
-  justify-content: center;      /* center the logo+text horizontally */
-  align-items: center;          /* vertically center logo with text */
-  gap: 40px;
-  padding: 80px 10%;
-  text-align: left;
-  background: var(--sand);      /* yellow background */
-  color: white;
-  flex-wrap: wrap;              /* wrap on smaller screens */
+/* PAGE HEADER */
+.page-header{
+  width:100%;
+  text-align:center;
+  font-size:52px;
+  font-weight:1000;
+  color:var(--black-text);
+  margin-bottom:40px;
 }
 
-.volunteer-top img {
-  max-width: 200px;             /* bigger logo */
-  height: auto;
+/* SECTIONS */
+section{
+  padding:140px 10%;
+  text-align:center;
 }
 
-.volunteer-top .text-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+/* VOLUNTEER TOP */
+.volunteer-top{
+  color:var(--black-text);
+  margin:auto;
 }
 
-.volunteer-top .text-content p {
-  color: white;
-  font-size: 2rem;
-  font-weight: bold;
-  line-height: 1.4;
-  margin-bottom: 10px;
+.volunteer-top p{
+  font-size:2rem;
+  font-weight:bold;
+  line-height:1.4;
+  margin-bottom:10px;
 }
 
-/* Highlight "serve others" in blue */
-.highlight-blue {
-  color: var(--blue-background);
-}
-
-/* ALT SECTION (cards container) */
-.alt-section {
-  background: var(--smoke-grey);
-  padding: 40px 10%;
+.volunteer-top span{
+  color: var(--yellow);
 }
 
 /* INITIATIVES GRID */
-.initiatives {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+.alt{
+  background:var(--menu-dark);
 }
 
-.card {
-  background: var(--ash-grey);
-  border-radius: 14px;
-  border: 1px solid rgba(216,195,165,0.25);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.35);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.donation-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+  margin-top:40px;
 }
 
-.card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
+.card{
+  background:var(--white);
+  padding:40px;
+  border-radius:14px;
+  color:var(--black-text);
+  box-shadow:0 15px 35px rgba(0,0,0,0.25);
+  transition:transform 0.3s ease;
 }
 
-.card-content {
-  padding: 30px;
+.card:hover{
+  transform:translateY(-6px);
 }
 
-.card h3 {
-  font-family: 'Anton', sans-serif;
-  color: var(--highlight);
-  margin-bottom: 15px;
-  letter-spacing: 1px;
+.card h3{
+  color:var(--yellow);
+  margin-bottom:15px;
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 45px rgba(0,0,0,0.45);
+/* GET INVOLVED BOTTOM BLOCK */
+.get-involved{
+  background:var(--yellow);
+  color:var(--black-text);
+  text-align:center;
+  padding:120px 10%;
 }
 
-/* FOOTER */
-footer {
-  background: var(--charcoal);
-  padding: 40px;
-  text-align: center;
-  color: var(--sand);
+.get-involved h2{
+  font-size:48px;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+.get-involved p{
+  font-size:24px;
+  font-weight:bold;
+}
+
+/* BUTTON */
+.btn {
+  padding: 16px 50px;
+  text-decoration: none;
+  border-radius: 40px;
+  font-weight: bold;
+  display: inline-block;
+  transition: 0.3s ease;
+  margin-top: 30px;
+  background: var(--black-text);
+  color: var(--yellow);
+}
+
+.btn:hover {
+  background: rgba(0,0,0,0.8);
+  color: #fff;
 }
 
 /* MOBILE */
 @media(max-width:900px){
-  header {
-    padding: 20px;
+  header{
+    padding:20px;
   }
 
-  nav {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: var(--charcoal);
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    display: none;
-    padding: 20px 0;
-    z-index: 9999;
+  nav{
+    position:absolute;
+    top:70px;
+    right:0;
+    background:rgba(0,0,0,0.9);
+    flex-direction:column;
+    width:100%;
+    text-align:center;
+    display:none;
+    padding:20px 0;
+    z-index:9999;
   }
 
-  nav.active {
-    display: flex;
+  nav.active{
+    display:flex;
   }
 
-  nav a {
-    padding: 15px 0;
+  nav a{
+    padding:15px 0;
   }
 
-  .menu-toggle {
-    display: block;
+  .menu-toggle{
+    display:block;
   }
 
-  .volunteer-top {
-    flex-direction: column;
-    text-align: center;
-    gap: 30px;
+  section{
+    padding:80px 8%;
   }
 
-  .volunteer-top .text-content p {
-    font-size: 1.8rem;
+  .page-header{
+    font-size:40px;
   }
+
+  .volunteer-top p{
+    font-size:1.8rem;
+  }
+
+  .get-involved h2{
+    font-size:36px;
+  }
+
+  .get-involved p{
+    font-size:20px;
+  }
+}
+
+/* FOOTER */
+footer{
+  background:var(--menu-dark);
+  padding:40px;
+  text-align:center;
+  color:var(--white);
 }
 </style>
 </head>
@@ -213,67 +241,65 @@ footer {
     <a href="contact.html">Contact</a>
     <a href="donate.html">Donate</a>
     <a href="prayer.html">Prayer</a>
-    <a href="volunteer.html">Volunteer</a>  
+    <a href="volunteer.html">Volunteer</a>
   </nav>
 </header>
 
 <!-- VOLUNTEER TOP BLOCK -->
 <section class="volunteer-top">
-  <!--<img src="moore_manna_photos/blue_logo.png" alt="Moore Manna Logo">-->
-  <div class="text-content">
-    <p>"Each of you</p>
-    <p>should use whatever</p>
-    <p>gift you have received to</p>
-    <p><span class="highlight-blue">serve others</span>..."</p>
-    <p><em>1 Peter 4:10</em></p>
-  </div>
+
+  <h1 class="page-header"><span>Volunteer</span> with Us</h1>
+
+  <p>"Each of you should use whatever gift you have received to <strong><span>serve</span> others</strong>..."</p>
+  <p><em>1 Peter 4:10</em></p>
+
 </section>
 
 <!-- VOLUNTEER CARDS -->
-<section class="alt-section">
-  <div class="initiatives">
+<section class="alt">
+  <h2>How You Can Volunteer</h2>
+
+  <div class="donation-grid">
 
     <div class="card">
-      <img src="moore_manna_photos/8.png" alt="Meals ministry">
-      <div class="card-content">
-        <h3>MEALS</h3>
-        <p>Help prepare and serve meals to neighbors in need with dignity and care.</p>
-      </div>
+      <h3>MEALS</h3>
+      <p>Help prepare and package meals for distribution.</p>
     </div>
 
     <div class="card">
-      <img src="moore_manna_photos/24.png" alt="Resources ministry">
-      <div class="card-content">
-        <h3>RESOURCES</h3>
-        <p>Assist in organizing and distributing essential supplies and support.</p>
-      </div>
+      <h3>RESOURCES</h3>
+      <p>Assist in organizing and distributing essential supplies and food.</p>
     </div>
 
     <div class="card">
-      <img src="moore_manna_photos/30.png" alt="Prayer ministry">
-      <div class="card-content">
-        <h3>PRAYER</h3>
-        <p>Stand in prayer for individuals and families walking through difficult seasons.</p>
-      </div>
+      <h3>PRAYER</h3>
+      <p>Stand in prayer for individuals and families walking through difficulty.</p>
     </div>
 
     <div class="card">
-      <img src="moore_manna_photos/29.png" alt="Mission ministry">
-      <div class="card-content">
-        <h3>MISSION</h3>
-        <p>Join outreach efforts to share hope and practical help throughout our community.</p>
-      </div>
+      <h3>MISSION</h3>
+      <p>Set up "hubs" across Moore County for meal and resource distribution for those in need.</p>
     </div>
 
   </div>
+
+</section>
+
+<!-- GET INVOLVED YELLOW BOTTOM BLOCK -->
+<section class="get-involved">
+  <h2>Get Involved.</h2>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSduknfsLkt97U3xY53U_kb7Qap4j2TT2qlB4Zl7zfdEL_OkNA/viewform" 
+     target="_blank" rel="noopener noreferrer" class="btn">
+    Volunteer Now
+  </a>
 </section>
 
 <footer>
-  © 2026 Moore Manna Nonprofit | 501(c)(3)
+© 2026 Moore Manna Nonprofit | 501(c)(3)
 </footer>
 
 <script>
-function toggleMenu() {
+function toggleMenu(){
   document.getElementById("nav-menu").classList.toggle("active");
 }
 </script>
