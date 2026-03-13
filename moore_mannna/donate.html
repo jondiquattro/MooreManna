@@ -5,305 +5,330 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Donate | Moore Manna</title>
 
-<!-- Updated Google Fonts Link for Merriweather -->
 <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --ash-grey: #173F5F;
-  --smoke-grey: #f2f1f1;
-  --charcoal: #141416;
-  --sand: #fbbc58;
-  --light-sand: #ffffff;
-  --highlight: #fbbc58;
-  --blue-background: #173F5F; /* blue background */
+
+:root{
+--white:#ffffff;
+--black-text:#000000;
+--yellow:#e2b808;
+--menu-dark:rgba(0,0,0,0.8);
 }
 
-* { margin:0; padding:0; box-sizing:border-box; }
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-body {
-  background: var(--ash-grey);
-  color: white;
-  font-family: 'Merriweather', serif; /* Updated to Merriweather */
-  line-height: 1.7;
-  font-size: 22px;
+body{
+font-family:'Merriweather', serif;
+font-size:22px;
+line-height:1.7;
+color:var(--white);
+/* desktop background */
+background:url('moore_manna_photos/back_splash_donate.png') center/cover no-repeat fixed;
 }
 
 /* HEADER + NAV */
-header {
-  background: var(--charcoal);
-  padding: 20px 10%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  z-index: 10;
+header{
+position:relative;
+padding:20px 10%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:var(--menu-dark);
+z-index:10;
 }
 
-.logo {
-  font-family: 'Anton', sans-serif;
-  font-size: 28px;
-  letter-spacing: 2px;
+.logo{
+font-weight:900;
+font-size:28px;
+color:var(--white);
 }
 
-nav {
-  display: flex;
-  gap: 30px;
+nav{
+display:flex;
+gap:30px;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+nav a{
+color:var(--white);
+font-weight:bold;
+text-decoration:none;
+transition:0.3s ease;
 }
 
-nav a:hover {
-  color: var(--sand);
+nav a:hover{
+color:var(--yellow);
 }
 
-.menu-toggle {
-  display: none;
-  font-size: 30px;
-  cursor: pointer;
-  z-index: 10000;
+.menu-toggle{
+display:none;
+font-size:30px;
+cursor:pointer;
 }
 
-/* DONATE TOP BLOCK */
-.donate-top {
-  display: flex;
-  justify-content: center;      /* center the logo+text horizontally */
-  align-items: center;          /* vertically center logo with text */
-  gap: 40px;
-  padding: 80px 10%;
-  text-align: left;
-  background: var(--blue-background);  /* blue background */
-  color: white;
-  flex-wrap: wrap;              /* wrap on smaller screens */
-}
-
-.donate-top img {
-  max-width: 200px;             /* bigger logo */
-  height: auto;
-}
-
-.donate-top .text-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.donate-top .text-content p {
-  color: white;
-  font-size: 2rem; /* Adjusted to match volunteer.html */
-  font-weight: bold;
-  line-height: 1.4;
-  margin-bottom: 10px;
-}
-
-/* Highlight "serve others" in blue */
-.highlight-blue {
-  color: var(--highlight);
+/* PAGE HEADER */
+.page-header{
+width:100%;
+text-align:center;
+font-size:52px;
+font-weight:1000;
+color:var(--black-text);
+margin-bottom:40px;
 }
 
 /* SECTIONS */
-section {
-  padding: 100px 10%;
-  text-align: center;
+section{
+padding:140px 10%;
+text-align:center;
 }
 
-section h2 {
-  font-family: 'Merriweather', serif; /* Updated to Merriweather */
-  font-size: 2.5rem;
-  color: var(--highlight);
-  margin-bottom: 25px;
+/* DONATE VERSE */
+.donate-top{
+color:var(--black-text);
+max-width:700px;
+margin:auto;
 }
 
-.alt {
-  background: var(--smoke-grey);
+.donate-top p{
+font-size:2rem;
+font-weight:bold;
+line-height:1.4;
 }
 
-.donation-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+/* DONATION GRID */
+.alt{
+background:var(--menu-dark);
 }
 
-.card {
-  background: var(--ash-grey); /* lighter grey */
-  padding: 40px;
-  border-radius: 14px;
-  border: 1px solid rgba(216,195,165,0.25);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.35);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.donation-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+margin-top:40px;
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 45px rgba(0,0,0,0.45);
+.card{
+background:rgba(255,255,255,0.95);
+padding:40px;
+border-radius:14px;
+color:var(--black-text);
+box-shadow:0 15px 35px rgba(0,0,0,0.25);
+transition:transform 0.3s ease;
 }
 
-.card h3 {
-  color: var(--highlight);
-  margin-bottom: 15px;
+.card:hover{
+transform:translateY(-6px);
 }
 
-.btn {
-  padding: 16px 50px;
-  text-decoration: none;
-  border-radius: 40px;
-  font-weight: bold;
-  display: inline-block;
-  transition: 0.3s ease;
-  background: var(--sand);
-  color: var(--charcoal);
-  margin-top: 30px;
+.card h3{
+color:var(--yellow);
+margin-bottom:15px;
 }
 
-.btn:hover {
-  background: var(--light-sand);
+/* GIVE FINANCIALLY WHITE SECTION */
+.donate-cta{
+background:var(--white);
+color:var(--black-text);
 }
 
-.scripture {
-  margin-top: 20px;
-  font-style: italic;
+.donate-cta h2{
+color:var(--yellow);
 }
 
-footer {
-  background: var(--charcoal);
-  padding: 40px;
-  text-align: center;
-  color: var(--sand);
+/* BUTTON */
+.btn{
+padding:16px 50px;
+text-decoration:none;
+border-radius:40px;
+font-weight:bold;
+display:inline-block;
+transition:0.3s ease;
+margin-top:30px;
 }
 
-/* MOBILE RESPONSIVE */
+.donate-cta .btn{
+background:var(--yellow);
+color:var(--black-text);
+}
+
+.donate-cta .btn:hover{
+background:#f4d25a;
+}
+
+/* MOBILE */
 @media(max-width:900px){
-  header {
-    padding: 20px;
-  }
 
-  nav {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: var(--charcoal);
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    display: none;
-    padding: 20px 0;
-    z-index: 9999;
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  nav a {
-    padding: 15px 0;
-  }
-
-  .menu-toggle {
-    display: block;
-    z-index: 10000;
-  }
-
-  section { 
-    padding: 70px 8%; 
-  }
-
-  .donate-top .text-content p {
-    font-size: 1.8rem; /* Adjust for mobile, same as in volunteer.html */
-  }
+header{
+padding:20px;
 }
+
+nav{
+position:absolute;
+top:70px;
+right:0;
+background:rgba(0,0,0,0.9);
+flex-direction:column;
+width:100%;
+text-align:center;
+display:none;
+padding:20px 0;
+z-index:9999;
+}
+
+nav.active{
+display:flex;
+}
+
+nav a{
+padding:15px 0;
+}
+
+.menu-toggle{
+display:block;
+}
+
+section{
+padding:80px 8%;
+}
+
+.page-header{
+font-size:40px;
+}
+
+.donate-top p{
+font-size:1.8rem;
+}
+
+/* adjust background portion for mobile */
+body{
+  background-position: top center; /* move to show upper part of image */
+  background-attachment: scroll;   /* prevents issues on mobile */
+}
+
+}
+
+/* FOOTER */
+footer{
+background:var(--menu-dark);
+padding:40px;
+text-align:center;
+color:var(--white);
+}
+
 </style>
+
 </head>
 
 <body>
 
 <header>
-  <div class="logo">MOORE MANNA</div>
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-  <nav id="nav-menu">
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact</a>
-    <a href="donate.html">Donate</a>
-    <a href="prayer.html">Prayer</a>
-    <a href="volunteer.html">Volunteer</a>  
-  </nav>
+
+<div class="logo">MOORE MANNA</div>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<nav id="nav-menu">
+<a href="index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="contact.html">Contact</a>
+<a href="donate.html">Donate</a>
+<a href="prayer.html">Prayer</a>
+<a href="volunteer.html">Volunteer</a>
+</nav>
+
 </header>
 
-<!-- DONATE TOP BLOCK -->
-<section class="donate-top">
-  <!--<img src="moore_manna_photos/yellow_logo.png" alt="Moore Manna Logo">-->
-  <div class="text-content">
-    <p>"... It is more</p>
-    <p>blessed to <span class="highlight-blue">give</span></p>
-    <p>than to receive."</p>
-    <p><em>Acts 20:35</em></p>
-  </div>
+<section>
+
+<h1 class="page-header">YOUR DONATION MATTERS.</h1>
+
+<div class="donate-top">
+<p>"...It is more blessed to give than to receive."</p>
+<p>Acts 20:35</p>
+</div>
+
 </section>
 
 <section class="alt">
-  <h2>Ways You Can Give</h2>
 
-  <div class="donation-grid">
+<h2>Ways You Can Give</h2>
 
-    <div class="card">
-      <h3>Financial Contributions</h3>
-      <p>
-        Monetary donations help us purchase food, hygiene supplies, and
-        essential resources for weekly outreach efforts.
-      </p>
-    </div>
+<div class="donation-grid">
 
-    <div class="card">
-      <h3>Food Donations</h3>
-      <p>
-        Non-perishable food items, bulk ingredients, and meal supplies
-        help us continue providing hot meals each week.
-      </p>
-    </div>
+<div class="card">
+<h3>Financial Contributions</h3>
+<p>
+Monetary donations help us purchase food, hygiene supplies,
+and essential resources for weekly outreach efforts.
+</p>
+</div>
 
-    <div class="card">
-      <h3>Clothing & Hygiene Items</h3>
-      <p>
-        New or gently used clothing, blankets, socks, and hygiene kits
-        restore dignity and comfort to those we serve.
-      </p>
-    </div>
+<div class="card">
+<h3>Food Donations</h3>
+<p>
+Non-perishable food items, bulk ingredients, and meal supplies
+help us continue providing hot meals each week.
+</p>
+</div>
 
-    <div class="card">
-      <h3>Corporate & Church Sponsorships</h3>
-      <p>
-        Partner with us as a business or ministry to sponsor outreach
-        events, meal programs, or supply drives.
-      </p>
-    </div>
+<div class="card">
+<h3>Clothing & Hygiene Items</h3>
+<p>
+New or gently used clothing, blankets, socks, and hygiene kits
+restore dignity and comfort to those we serve.
+</p>
+</div>
 
-  </div>
+<div class="card">
+<h3>Corporate & Church Sponsorships</h3>
+<p>
+Partner with us as a business or ministry to sponsor outreach
+events, meal programs, or supply drives.
+</p>
+</div>
+
+</div>
+
 </section>
 
-<section>
-  <h2>Give Financially</h2>
-  <p>
-    Secure online giving makes it easy to support the mission.
-    Click below to make a one-time or recurring donation.
-  </p>
+<section class="donate-cta">
 
-  <a href="https://centz.com/HCF53PUUTUM5" class="btn">Donate Now</a>
+<h2>Our Mission in Action</h2>
+
+<p>In addition to hot meals, we distribute essential supplies like heaters, blankets,</p>
+<p>hygiene kits, and shelf-stable groceries when appropriate.</p>
+<br>
+
+<p>We facilitate access to grants and scholarships for drug and alcohol</p>
+<p>rehabilitation centers as well as transportation when needed.</p>
+<br>
+
+<p>Our goal is to be helpful, share the Gospel, and bridge the gap for</p>
+<p>local resources. This year we have plans for area clean-ups,</p>
+<p>communal garden planting and education, as well as home repairs.</p>
+<br>
+
+<p><strong>Your partnership makes this happen.</strong> </p>
+<p>Please consider joining us through donations or volunteering.</p>
+
+<a href="https://centz.com/HCF53PUUTUM5" class="btn">Donate Now</a>
+
 </section>
 
 <footer>
-  © 2026 Moore Manna Nonprofit | 501(c)(3)
+© 2026 Moore Manna Nonprofit | 501(c)(3)
 </footer>
 
 <script>
-// Mobile menu toggle
-function toggleMenu() {
-  document.getElementById("nav-menu").classList.toggle("active");
+
+function toggleMenu(){
+document.getElementById("nav-menu").classList.toggle("active");
 }
+
 </script>
 
 </body>
