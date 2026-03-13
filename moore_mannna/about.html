@@ -5,118 +5,88 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Us | Moore Manna</title>
 
-<!-- Updated Google Fonts Link for Merriweather -->
 <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --ash-grey: #173F5F;
-  --smoke-grey: #f2f1f1;
-  --charcoal: #141416;
-  --sand: #fbbc58;
-  --light-sand: #ffffff;
-  --highlight: #fbbc58;
+  --white: #ffffff;
+  --black-text: #000000;
+  --yellow: #e2b808;
 }
 
-* { 
-  margin:0; 
-  padding:0; 
-  box-sizing:border-box; 
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--ash-grey);
-  color: white;
-  font-family: 'Merriweather', serif; /* Updated to Merriweather */
-  line-height: 1.7;
+  font-family: 'Merriweather', serif;
   font-size: 22px;
+  line-height: 1.7;
+  color: var(--white);
+  background: url('moore_manna_photos/back_splash_about.png') center/cover no-repeat fixed;
 }
 
 /* HEADER + NAV */
 header {
-  background: var(--charcoal);
+  position: relative;
   padding: 20px 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  background: rgba(0,0,0,0.8);
   z-index: 10;
 }
 
-/* LOGO TEXT */
 .logo {
-  font-family: 'Anton', sans-serif;
+  font-weight: 900;
   font-size: 28px;
-  letter-spacing: 2px;
+  color: var(--white);
 }
 
-/* NAV LINKS */
 nav {
   display: flex;
   gap: 30px;
 }
 
 nav a {
-  color: white;
-  text-decoration: none;
+  color: var(--white);
   font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
 }
 
 nav a:hover {
-  color: var(--sand);
+  color: var(--yellow);
 }
 
-/* HAMBURGER BUTTON */
 .menu-toggle {
   display: none;
   font-size: 30px;
   cursor: pointer;
-  z-index: 10000;
 }
 
-/* SECTION */
-section {
-  padding: 100px 10%;
-}
-
-/* TWO COLUMN LAYOUT */
-.about-container {
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  gap: 60px;
-}
-
-/* LEFT TEXT */
-.about-text {
-  flex: 1;
-  text-align: center;
-}
-
-.about-text p {
-  margin-bottom: 20px;
-}
-
-/* RIGHT PHOTO DECK */
-.photo-stack {
-  flex: 0 0 420px;
-  position: relative;
-  min-height: 500px;
-}
-
-.photo-stack img {
-  position: absolute;
+/* PAGE HEADER */
+.page-header {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 14px;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-  opacity: 0;
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  text-align: center;
+  font-size: 52px;         /* slightly bigger */
+  font-weight: 1000;       /* bolder */
+  color: var(--black-text);
+  margin-bottom: 30px;     /* smaller gap to next section */
 }
 
-/* MOBILE */
-@media (max-width: 900px) {
+.page-header span {
+  color: var(--yellow);    /* "Us" in yellow */
+}
+
+@media (max-width: 900px){
+
+  body{
+    font-size:20px;
+  }
 
   header {
     padding: 20px;
@@ -126,7 +96,7 @@ section {
     position: absolute;
     top: 70px;
     right: 0;
-    background: var(--charcoal);
+    background: rgba(0,0,0,0.9);
     flex-direction: column;
     width: 100%;
     text-align: center;
@@ -135,39 +105,163 @@ section {
     z-index: 9999;
   }
 
-  nav.active {
-    display: flex;
-  }
+  nav.active { display: flex; }
 
-  nav a {
-    padding: 15px 0;
-  }
+  nav a { padding: 15px 0; }
 
-  .menu-toggle {
-    display: block;
-  }
+  .menu-toggle { display: block; }
 
   section {
-    padding: 70px 8%;
+    padding: 80px 8%;
   }
 
-  .about-container {
-    flex-direction: column-reverse;
+  .about-block.founders, 
+  .about-block.volunteers {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .photo-stack {
+  .photo-stack-static, 
+  .photo-stack-rotate {
     width: 100%;
-    min-height: 350px;
-    margin-bottom: 40px;
+    height: 300px;
+    margin-bottom: 30px;
+  }
+
+  .about-text {
+    min-height: auto;
+    justify-content: flex-start;
+    max-width:600px;
   }
 
 }
 
+.about-text{
+  max-width:600px;
+}
+
+/* MAIN ABOUT SECTION */
+section {
+  padding: 140px 10%;
+}
+
+/* ABOUT CONTAINER */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* SINGLE BLOCK: text + photo */
+.about-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* LEFT TEXT */
+.about-text {
+  flex: 1 1 450px;
+  color: var(--black-text);
+  display: flex;            
+  flex-direction: column;   
+  justify-content: center;  /* vertical center */
+  align-items: center;      /* horizontal center */
+  text-align: center;       
+  min-height: 400px;        /* match photo height */
+}
+
+.about-text p {
+  margin-bottom: 20px;
+}
+
+/* PHOTO STACK */
+.photo-stack-static, .photo-stack-rotate {
+  flex: 0 0 350px; 
+  position: relative;
+  height: 400px; 
+}
+
+/* Static photo (Founders) */
+.photo-stack-static img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* Rotating photos (Volunteers) */
+.photo-stack-rotate img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* VOLUNTEERS BLOCK REVERSE */
+.about-block.volunteers {
+  flex-direction: row-reverse;
+}
+
+/* MOBILE */
+@media (max-width: 900px){
+
+  header {
+    padding: 20px;
+  }
+
+  nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgba(0,0,0,0.9);
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    display: none;
+    padding: 20px 0;
+    z-index: 9999;
+  }
+
+  nav.active { display: flex; }
+
+  nav a { padding: 15px 0; }
+
+  .menu-toggle { display: block; }
+
+  section {
+    padding: 80px 8%;
+  }
+
+  .about-block.founders, 
+  .about-block.volunteers {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .photo-stack-static, .photo-stack-rotate {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 30px;
+  }
+
+  .about-text {
+    min-height: auto;
+    justify-content: flex-start;
+  }
+}
+
 footer {
-  background: var(--charcoal);
+  background: rgba(0,0,0,0.8);
   padding: 40px;
   text-align: center;
-  color: var(--sand);
+  color: var(--white);
 }
 </style>
 </head>
@@ -183,30 +277,37 @@ footer {
     <a href="contact.html">Contact</a>
     <a href="donate.html">Donate</a>
     <a href="prayer.html">Prayer</a>
-    <a href="volunteer.html">Volunteer</a>  
+    <a href="volunteer.html">Volunteer</a>
   </nav>
 </header>
 
-<section>
+<section class="about-container">
 
-  <div class="about-container">
+  <!-- PAGE HEADER -->
+  <h1 class="page-header">This Is <span>Us</span></h1>
 
-    <!-- LEFT SIDE TEXT -->
+  <!-- FOUNDERS BLOCK -->
+  <div class="about-block founders">
     <div class="about-text">
-      <p>We began in September of 2025 with a burden to feed God’s people.</p>
-      <p>Seemingly a simple task feeding 12 people quickly grew to feeding over 110 people each week!</p>
-      <p>What started out as sandwiches with bread made from scratch evolved into delicious, well thought out meals, prayer and discipleship.</p>
-      <p>Our volunteer count was around 8 initially, and we now have 40 faithful hands and feet.</p>
-      <p>Our Team has successfully found long-term placement for 6 individuals since September, and countless others have made Jesus Lord of their life, begun coming to church, reading Scripture, helping others and finding hope in darkness.</p>
+      <p>Brien and Kelly Travis founded Moore Manna in September of 2025.</p>
+      <p>Seemingly a simple tasking feeding 12 people quickly grew to feeding over 110 people each week!</p>
+      <p>What started out as sandwiches with bread made from scratch evolved into delicious, well thought out meals, prayer, and discipleship.</p>
     </div>
-
-    <!-- RIGHT SIDE PHOTO DECK -->
-    <div class="photo-stack">
+    <div class="photo-stack-static">
       <img src="moore_manna_photos/4.png" alt="Moore Manna serving community">
+    </div>
+  </div>
+
+  <!-- VOLUNTEERS BLOCK -->
+  <div class="about-block volunteers">
+    <div class="about-text">
+      <p>Our volunteer count was around 8 initially, and we now have 40 faithful hands and feet.</p>
+      <p>Our Team has successfully found long-term placement for 6 individuals since September, and countless others have made Jesus Lord of their life, begun coming to church, reading Scripture, helping others, and finding hope in darkness.</p>
+    </div>
+    <div class="photo-stack-rotate">
       <img src="moore_manna_photos/15.png" alt="Moore Manna volunteers">
       <img src="moore_manna_photos/7.png" alt="Moore Manna outreach">
     </div>
-
   </div>
 
 </section>
@@ -216,26 +317,26 @@ footer {
 </footer>
 
 <script>
-// Photo shuffle
-const images = document.querySelectorAll('.photo-stack img');
-let current = 0;
+// Rotate volunteer images
+const rotateImages = document.querySelectorAll('.photo-stack-rotate img');
+let currentRotate = 0;
 
-function shuffleDeck() {
-  images.forEach((img) => {
+function rotateDeck() {
+  rotateImages.forEach((img) => {
     img.style.opacity = 0;
     img.style.transform = "scale(0.95)";
     img.style.zIndex = 0;
   });
 
-  images[current].style.opacity = 1;
-  images[current].style.transform = "scale(1)";
-  images[current].style.zIndex = 3;
+  rotateImages[currentRotate].style.opacity = 1;
+  rotateImages[currentRotate].style.transform = "scale(1)";
+  rotateImages[currentRotate].style.zIndex = 3;
 
-  current = (current + 1) % images.length;
+  currentRotate = (currentRotate + 1) % rotateImages.length;
 }
 
-shuffleDeck();
-setInterval(shuffleDeck, 3000);
+rotateDeck();
+setInterval(rotateDeck, 3000);
 
 // Mobile menu toggle
 function toggleMenu() {
