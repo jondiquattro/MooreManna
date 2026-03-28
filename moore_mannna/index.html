@@ -239,6 +239,11 @@ nav a:hover {
   transform: translateX(80px);
 }
 
+.founding-fifty {
+    padding: 100px 10%;
+    text-align: center;
+}
+
 /* EVENTS */
 
 .events {
@@ -378,6 +383,28 @@ nav a {
   font-size: 1rem;
 }
 
+/* NEW: make founding-fifty mobile friendly */
+.founding-fifty {
+  padding: 40px 20px; /* reduce vertical padding on small screens */
+  text-align: center;
+}
+
+.founding-fifty h2 {
+  font-size: 28px;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.founding-fifty img {
+  width: 100%;       /* allow image to scale to container */
+  max-width: 520px;  /* avoid overly large images on wider small screens */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
 }
 
 </style>
@@ -510,6 +537,12 @@ We <span>equip</span> people with the practical tools, skills, and spiritual fou
 </div>
 
 </div>
+
+</section>
+
+<section class="founding-fifty">
+    <h2>Become A Founding 50 Member</h2>
+    <img src='moore_manna_photos/founding-fifty.png' alt="Founding fifty flier">
 
 </section>
 
