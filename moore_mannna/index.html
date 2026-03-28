@@ -244,6 +244,22 @@ nav a:hover {
     text-align: center;
 }
 
+/* Make the founding-fifty image clickable and accessible */
+.founding-fifty a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.founding-fifty a:focus {
+  outline: 3px solid var(--yellow-bg);
+  outline-offset: 4px;
+}
+
+/* NEW: show pointer on the image so users know it's clickable */
+.founding-fifty a img {
+  cursor: pointer;
+}
+
 /* EVENTS */
 
 .events {
@@ -542,7 +558,10 @@ We <span>equip</span> people with the practical tools, skills, and spiritual fou
 
 <section class="founding-fifty">
     <h2>Become A Founding 50 Member</h2>
-    <img src='moore_manna_photos/founding-fifty.png' alt="Founding fifty flier">
+    <!-- Click the image to go to the target site. Replace the href with your chosen URL. -->
+    <a href="https://centz.com/HCF53PUUTUM5" target="_blank" rel="noopener noreferrer" aria-label="Learn more about becoming a Founding 50 member">
+      <img src='moore_manna_photos/founding-fifty.png' alt="Founding fifty flier">
+    </a>
 
 </section>
 
