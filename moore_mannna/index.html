@@ -240,7 +240,7 @@ nav a:hover {
 }
 
 .founding-fifty {
-    padding: 100px 10%;
+    padding: 75px 10%;
     text-align: center;
 }
 
@@ -260,10 +260,33 @@ nav a:hover {
   cursor: pointer;
 }
 
+.locations {
+    padding: 75px 10%;
+    text-align: center;
+}
+
+.locations h2 {
+    font-size: 36px;
+    /*margin-bottom: 18px;*/
+}
+
+/* Image styling to match founding-fifty (not clickable) */
+.locations img {
+    cursor: default;
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    -webkit-user-drag: none;
+}
+
 /* EVENTS */
 
 .events {
-  padding: 100px 10%;
+  padding: 75px 10%;
   text-align: center;
 }
 
@@ -272,6 +295,20 @@ nav a:hover {
   height: 600px;
   border: none;
   border-radius: 10px;
+}
+
+/* Make the latest-flier image match the founding-fifty image styling (do not change iframe) */
+.events img {
+  cursor: default;
+  width: auto;           /* allow intrinsic/desktop sizing, mobile will override */
+  max-width: 900px;     /* allow larger size on wide screens (matches founding-fifty) */
+  height: auto;
+  display: block;
+  margin: 0 auto 48px; /* increased space below image so iframe isn't flush against it */
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+  -webkit-user-drag: none;
+    padding-bottom: 75px;
 }
 
 /* CTA */
@@ -311,6 +348,7 @@ footer {
   text-align: center;
   color: var(--white);
 }
+
 
 /* MOBILE */
 @media(max-width:900px){
@@ -421,6 +459,33 @@ nav a {
   box-shadow: 0 10px 20px rgba(0,0,0,0.12);
 }
 
+/* Ensure latest-flier uses the same mobile-friendly sizing */
+.events img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+  margin: 0 auto 18px; /* slightly smaller gap on narrow screens */
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+  padding-bottom: 75px;
+}
+
+.locations h2 {
+    font-size: 28px;
+    line-height: 1.2;
+    /*margin-bottom: 14px;*/
+}
+
+.locations img {
+    width: 100%;       /* allow image to scale to container */
+    max-width: 520px;  /* avoid overly large images on wider small screens */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
 }
 
 </style>
@@ -436,7 +501,7 @@ nav a {
 <nav id="nav-menu">
 <a href="index.html">Home</a>
 <a href="about.html">About Us</a>
-<a href="contact.html">Contact</a>
+<a href="contact.html">Resources</a>
 <a href="donate.html">Donate</a>
 <a href="prayer.html">Prayer</a>
 <a href="volunteer.html">Volunteer</a>
@@ -462,38 +527,38 @@ class="hero-logo">
 <div class="photo-strip">
 <div class="photo-track">
 
-<img src='moore_manna_photos/1.png'>
-<img src='moore_manna_photos/2.png'>
-<img src='moore_manna_photos/3.png'>
-<img src='moore_manna_photos/4.png'>
-<img src='moore_manna_photos/5.png'>
-<img src='moore_manna_photos/6.png'>
-<img src='moore_manna_photos/7.png'>
-<img src='moore_manna_photos/8.png'>
-<img src='moore_manna_photos/9.png'>
-<img src='moore_manna_photos/10.png'>
-<img src='moore_manna_photos/11.png'>
-<img src='moore_manna_photos/12.png'>
-<img src='moore_manna_photos/13.png'>
-<img src='moore_manna_photos/14.png'>
-<img src='moore_manna_photos/15.png'>
-<img src='moore_manna_photos/16.png'>
-<img src='moore_manna_photos/17.png'>
-<img src='moore_manna_photos/18.png'>
-<img src='moore_manna_photos/19.png'>
-<img src='moore_manna_photos/20.png'>
-<img src='moore_manna_photos/21.png'>
-<img src='moore_manna_photos/22.png'>
-<img src='moore_manna_photos/23.png'>
-<img src='moore_manna_photos/24.png'>
-<img src='moore_manna_photos/25.png'>
-<img src='moore_manna_photos/26.png'>
-<img src='moore_manna_photos/27.png'>
-<img src='moore_manna_photos/28.png'>
-<img src='moore_manna_photos/29.png'>
-<img src='moore_manna_photos/30.png'>
-<img src='moore_manna_photos/31.png'>
-<img src='moore_manna_photos/0.png'>
+<img src='moore_manna_photos/1.png' loading="lazy">
+<img src='moore_manna_photos/2.png' loading="lazy">
+<img src='moore_manna_photos/3.png' loading="lazy">
+<img src='moore_manna_photos/4.png' loading="lazy">
+<img src='moore_manna_photos/5.png' loading="lazy">
+<img src='moore_manna_photos/6.png' loading="lazy">
+<img src='moore_manna_photos/7.png' loading="lazy">
+<img src='moore_manna_photos/8.png' loading="lazy">
+<img src='moore_manna_photos/9.png' loading="lazy">
+<img src='moore_manna_photos/10.png' loading="lazy">
+<img src='moore_manna_photos/11.png' loading="lazy">
+<img src='moore_manna_photos/12.png' loading="lazy">
+<img src='moore_manna_photos/13.png' loading="lazy">
+<img src='moore_manna_photos/14.png' loading="lazy">
+<img src='moore_manna_photos/15.png' loading="lazy">
+<img src='moore_manna_photos/16.png' loading="lazy">
+<img src='moore_manna_photos/17.png' loading="lazy">
+<img src='moore_manna_photos/18.png' loading="lazy">
+<img src='moore_manna_photos/19.png' loading="lazy">
+<img src='moore_manna_photos/20.png' loading="lazy">
+<img src='moore_manna_photos/21.png' loading="lazy">
+<img src='moore_manna_photos/22.png' loading="lazy">
+<img src='moore_manna_photos/23.png' loading="lazy">
+<img src='moore_manna_photos/24.png' loading="lazy">
+<img src='moore_manna_photos/25.png' loading="lazy">
+<img src='moore_manna_photos/26.png' loading="lazy">
+<img src='moore_manna_photos/27.png' loading="lazy">
+<img src='moore_manna_photos/28.png' loading="lazy">
+<img src='moore_manna_photos/29.png' loading="lazy">
+<img src='moore_manna_photos/30.png' loading="lazy">
+<img src='moore_manna_photos/31.png' loading="lazy">
+<img src='moore_manna_photos/0.png' loading="lazy">
 
 </div>
 </div>
@@ -556,11 +621,19 @@ We <span>equip</span> people with the practical tools, skills, and spiritual fou
 
 </section>
 
+<section class="locations">
+    <h2>Join Us For A Meal And Prayer</h2>
+    <!-- Click the image to go to the target site. Replace the href with your chosen URL. -->
+
+    <img src='moore_manna_photos/locations.jpeg' alt="Join us for a meal and prayer flier" fetchpriority="high">
+
+</section>
+
 <section class="founding-fifty">
     <h2>Become A Founding 50 Member</h2>
     <!-- Click the image to go to the target site. Replace the href with your chosen URL. -->
     <a href="https://centz.com/HCF53PUUTUM5" target="_blank" rel="noopener noreferrer" aria-label="Learn more about becoming a Founding 50 member">
-      <img src='moore_manna_photos/founding-fifty.png' alt="Founding fifty flier">
+      <img src='moore_manna_photos/founding-fifty.png' alt="Founding fifty flier" fetchpriority="high">
     </a>
 
 </section>
@@ -568,6 +641,7 @@ We <span>equip</span> people with the practical tools, skills, and spiritual fou
 <section class="events">
 
 <h2>Upcoming Events</h2>
+<img src='moore_manna_photos/latest-flier.jpeg' alt="Latest event flier" fetchpriority="high">
 
 <iframe src="https://calendar.google.com/calendar/embed?src=c_d40182f8fc9a12beb3d2a8a7f8e25c150146a1823e97d8b07885b14708b26c3b@group.calendar.google.com&ctz=America/New_York"></iframe>
 
